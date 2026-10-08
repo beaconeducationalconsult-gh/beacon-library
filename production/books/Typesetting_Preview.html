@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Library — Typesetting Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #d0d0d0;
+    font-family: 'Libre Baskerville', 'DejaVu Serif', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+  }
+  
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 25px auto;
+    background: white;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    padding: 20mm 20mm 20mm 25mm;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  
+  .header {
+    position: absolute;
+    top: 10mm;
+    left: 25mm;
+    right: 20mm;
+    font-family: 'Source Sans Pro', 'DejaVu Sans', Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #888;
+    letter-spacing: 0.3pt;
+    border-bottom: 0.4pt solid #ccc;
+    padding-bottom: 3mm;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 25mm;
+    right: 20mm;
+    font-size: 9pt;
+    color: #666;
+    text-align: right;
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+  
+  .footer.left { text-align: left; }
+  
+  /* Title Page */
+  .title-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20mm;
+  }
+  
+  .series-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #666;
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    margin-bottom: 8mm;
+  }
+  
+  .title-rule {
+    width: 60mm;
+    height: 0.8pt;
+    background: #333;
+    margin: 4mm auto;
+  }
+  
+  .book-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 32pt;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 8mm 0;
+    color: #1a1a1a;
+  }
+  
+  .book-subtitle {
+    font-size: 14pt;
+    color: #555;
+    line-height: 1.5;
+    margin: 8mm 0;
+  }
+  
+  .book-desc {
+    font-size: 11pt;
+    color: #777;
+    line-height: 1.6;
+    margin: 12mm 0;
+  }
+  
+  .publisher {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 10pt;
+    margin-top: 15mm;
+    color: #333;
+  }
+  
+  .publisher span { color: #888; }
+  
+  /* Paper Layout */
+  .paper-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3mm;
+  }
+  
+  .paper-meta {
+    text-align: center;
+    color: #666;
+    font-size: 10pt;
+    margin-bottom: 5mm;
+  }
+  
+  .divider {
+    border-top: 0.4pt solid #ccc;
+    margin: 4mm 0;
+  }
+  
+  .section-header {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    text-align: center;
+    margin: 6mm 0 3mm 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+  
+  .instruction {
+    text-align: center;
+    font-size: 10pt;
+    color: #555;
+    margin-bottom: 5mm;
+    font-style: italic;
+  }
+  
+  .question {
+    margin-bottom: 4mm;
+    padding-left: 10mm;
+    text-indent: -10mm;
+  }
+  
+  .q-number {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+  }
+  
+  .options {
+    margin-left: 16mm;
+    margin-top: 1.5mm;
+  }
+  
+  .option {
+    margin-bottom: 1mm;
+    font-size: 10.5pt;
+  }
+  
+  /* Preview Banner */
+  .preview-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.5pt;
+  }
+  
+  .preview-banner small {
+    display: block;
+    font-size: 9pt;
+    font-weight: 400;
+    color: #aaa;
+    margin-top: 2px;
+  }
+  
+  .page-label {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 9pt;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-weight: 600;
+  }
+  
+  /* Info Box */
+  .info-box {
+    background: #f5f5f5;
+    border-left: 3px solid #333;
+    padding: 12px 15px;
+    margin: 8mm 0;
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  
+  .info-box strong {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+  }
+  
+  /* Table */
+  .stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5mm 0;
+    font-size: 10pt;
+  }
+  
+  .stats-table th {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+  
+  .stats-table td {
+    padding: 5px 10px;
+    border-bottom: 0.5px solid #eee;
+  }
+  
+  .stats-table tr:nth-child(even) { background: #fafafa; }
+  
+  .check { color: #2d8a4e; font-weight: bold; }
+  .warn { color: #d4880f; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  BEACON LIBRARY — TYPESETTING PREVIEW
+  <small>Integrated Science for Basic 7 — BECE Mock Examinations — 153 pages, 20 papers, 800 MCQs</small>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1: TITLE PAGE
+     ═══════════════════════════════════════════ -->
+<div class="page title-page">
+  <div class="page-label">Title Page</div>
+  
+  <div class="series-title">Beacon Educational Series</div>
+  <div class="title-rule"></div>
+  
+  <div class="book-title">
+    Integrated Science<br>for Basic 7
+  </div>
+  
+  <div class="book-subtitle">
+    A Comprehensive Question Bank<br>with Marking Schemes
+  </div>
+  
+  <div class="title-rule" style="width: 40mm;"></div>
+  
+  <div class="book-desc">
+    Curriculum-Aligned Practice Papers<br>
+    for Basic 7 (JHS 1) Students and Teachers
+  </div>
+  
+  <div class="publisher">
+    Beacon Educational Consult<br>
+    <span>2026 Edition</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2: PAPER 1 — SECTION A (MCQs 1-10)
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Paper Layout — Section A (MCQs)</div>
+  <div class="header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Paper 1: Agricultural Tools and Machinery</span>
+  </div>
+  
+  <div class="paper-title">Paper 1: Agricultural Tools and Machinery</div>
+  <div class="paper-meta">Time Allowed: 2 hours &nbsp;|&nbsp; Total Marks: 100</div>
+  
+  <div class="divider"></div>
+  
+  <div class="section-header">Section A: Objective Test</div>
+  <div class="instruction">
+    Answer <strong>ALL</strong> questions. Each question carries 1 mark.<br>
+    Choose the <strong>BEST</strong> answer (A, B, C or D).
+  </div>
+  
+  <div class="question">
+    <span class="q-number">1.</span>
+    A simple agricultural tool is one that is
+    <div class="options">
+      <div class="option">A. made entirely of plastic</div>
+      <div class="option">B. driven by a diesel engine</div>
+      <div class="option">C. operated by hand and needs no engine</div>
+      <div class="option">D. used only on very large farms</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">2.</span>
+    The tool used mainly for clearing weeds and cutting down bushes on a farm is the
+    <div class="options">
+      <div class="option">A. rake</div>
+      <div class="option">B. garden trowel</div>
+      <div class="option">C. watering can</div>
+      <div class="option">D. cutlass</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">3.</span>
+    The farm tool used for making ridges, mounds and weeding is the
+    <div class="options">
+      <div class="option">A. wheelbarrow</div>
+      <div class="option">B. hoe</div>
+      <div class="option">C. secateurs</div>
+      <div class="option">D. measuring tape</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">4.</span>
+    Seedlings in a nursery are watered gently with a
+    <div class="options">
+      <div class="option">A. watering can</div>
+      <div class="option">B. spraying machine for weedicide</div>
+      <div class="option">C. shovel</div>
+      <div class="option">D. bucket of ice</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">5.</span>
+    The tool used for gathering dry leaves and levelling the surface of a seedbed is the
+    <div class="options">
+      <div class="option">A. knapsack sprayer</div>
+      <div class="option">B. rake</div>
+      <div class="option">C. axe</div>
+      <div class="option">D. cutlass</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">6.</span>
+    A tool used for digging holes for planting tree seedlings is the
+    <div class="options">
+      <div class="option">A. rake</div>
+      <div class="option">B. pruning saw</div>
+      <div class="option">C. watering can</div>
+      <div class="option">D. pickaxe or mattock</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">7.</span>
+    Secateurs are used on a farm mainly for
+    <div class="options">
+      <div class="option">A. pruning or cutting small branches of plants</div>
+      <div class="option">B. carrying farm produce</div>
+      <div class="option">C. watering young plants</div>
+      <div class="option">D. ploughing the land</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">8.</span>
+    Which of the following tools is used on an ANIMAL farm?
+    <div class="options">
+      <div class="option">A. A garden rake</div>
+      <div class="option">B. A seed drill</div>
+      <div class="option">C. A feeding trough brush</div>
+      <div class="option">D. A pair of secateurs</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">9.</span>
+    A wheelbarrow is used on a farm mainly for
+    <div class="options">
+      <div class="option">A. spraying insecticide</div>
+      <div class="option">B. carrying manure, soil and harvested crops</div>
+      <div class="option">C. cutting grass</div>
+      <div class="option">D. measuring land</div>
+    </div>
+  </div>
+  
+  <div class="question">
+    <span class="q-number">10.</span>
+    Which of the following is used to protect the hands while working with farm tools?
+    <div class="options">
+      <div class="option">A. A watering can</div>
+      <div class="option">B. Hand gloves</div>
+      <div class="option">C. A cutlass sheath</div>
+      <div class="option">D. A head pan</div>
+    </div>
+  </div>
+  
+  <div class="footer">1</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3: SECTION B — THEORY QUESTIONS
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Paper Layout — Section B (Theory)</div>
+  <div class="header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Paper 1: Agricultural Tools and Machinery</span>
+  </div>
+  
+  <div class="section-header" style="margin-top: 3mm;">Section B: Theory</div>
+  <div class="instruction">
+    Answer any <strong>FOUR</strong> questions from this section.
+  </div>
+  
+  <div style="margin-top: 5mm;">
+    <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 13pt; margin-bottom: 4mm;">Question 1</h3>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(a)</strong> Define the term <em>agricultural tool</em>. <span style="color: #666; font-style: italic;">[2 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(b)</strong> State <strong>four</strong> differences between simple and mechanical agricultural tools. <span style="color: #666; font-style: italic;">[8 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(c)</strong> Name <strong>three</strong> simple agricultural tools used in crop production and state one use of each. <span style="color: #666; font-style: italic;">[6 marks]</span>
+    </div>
+  </div>
+  
+  <div style="margin-top: 6mm;">
+    <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 13pt; margin-bottom: 4mm;">Question 2</h3>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(a)</strong> What is photosynthesis? <span style="color: #666; font-style: italic;">[2 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(b)</strong> Write the word equation for photosynthesis. <span style="color: #666; font-style: italic;">[3 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(c)</strong> Explain <strong>three</strong> conditions necessary for photosynthesis to take place. <span style="color: #666; font-style: italic;">[6 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(d)</strong> A farmer noticed that crops grown under a shade produced less food than those in direct sunlight. Explain this observation using your knowledge of photosynthesis. <span style="color: #666; font-style: italic;">[3 marks]</span>
+    </div>
+  </div>
+  
+  <div style="margin-top: 6mm;">
+    <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 13pt; margin-bottom: 4mm;">Question 3</h3>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(a)</strong> Define the term <em>mixture</em>. <span style="color: #666; font-style: italic;">[2 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(b)</strong> Describe how you would separate a mixture of sand, salt, and iron filings. <span style="color: #666; font-style: italic;">[8 marks]</span>
+    </div>
+    
+    <div style="margin-left: 5mm; margin-bottom: 4mm;">
+      <strong>(c)</strong> Calculate the percentage of salt in a 200 g sample of seawater if it contains 7 g of dissolved salt. <span style="color: #666; font-style: italic;">[4 marks]</span>
+    </div>
+  </div>
+  
+  <div class="footer">2</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4: ANSWER KEY — SECTION A TABLE
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Answer Key Layout</div>
+  <div class="header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Answer Key</span>
+  </div>
+  
+  <h2 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 18pt; margin-bottom: 5mm;">
+    ANSWER KEY
+  </h2>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 14pt; margin-bottom: 5mm;">
+    Paper 1: Agricultural Tools and Machinery
+  </h3>
+  
+  <div class="section-header" style="text-align: left; font-size: 11pt; margin: 4mm 0 3mm 0;">
+    SECTION A: OBJECTIVE TEST
+  </div>
+  
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th style="width: 40px; text-align: center;">Q</th>
+        <th style="width: 40px; text-align: center;">Ans</th>
+        <th>Curriculum Area</th>
+        <th style="width: 100px;">Cognitive Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="text-align: center; font-weight: bold;">1</td><td style="text-align: center; font-weight: bold;">C</td><td>Agricultural tools — classification</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">2</td><td style="text-align: center; font-weight: bold;">D</td><td>Agricultural tools — uses</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">3</td><td style="text-align: center; font-weight: bold;">B</td><td>Agricultural tools — uses</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">4</td><td style="text-align: center; font-weight: bold;">A</td><td>Nursery practices</td><td>Understand</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">5</td><td style="text-align: center; font-weight: bold;">B</td><td>Agricultural tools — uses</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">6</td><td style="text-align: center; font-weight: bold;">D</td><td>Planting tools</td><td>Apply</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">7</td><td style="text-align: center; font-weight: bold;">A</td><td>Pruning tools</td><td>Understand</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">8</td><td style="text-align: center; font-weight: bold;">C</td><td>Animal husbandry tools</td><td>Apply</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">9</td><td style="text-align: center; font-weight: bold;">B</td><td>Transport tools</td><td>Understand</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">10</td><td style="text-align: center; font-weight: bold;">B</td><td>Farm safety</td><td>Apply</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">11</td><td style="text-align: center; font-weight: bold;">A</td><td>Tool handling</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">12</td><td style="text-align: center; font-weight: bold;">C</td><td>Tool maintenance</td><td>Understand</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">13</td><td style="text-align: center; font-weight: bold;">B</td><td>Harvesting tools</td><td>Remember</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">14</td><td style="text-align: center; font-weight: bold;">D</td><td>Soil preparation</td><td>Apply</td></tr>
+      <tr><td style="text-align: center; font-weight: bold;">15</td><td style="text-align: center; font-weight: bold;">A</td><td>Storage of tools</td><td>Understand</td></tr>
+    </tbody>
+  </table>
+  
+  <div class="info-box" style="margin-top: 5mm;">
+    <strong>Answer Distribution:</strong><br>
+    A: 5 (33%) &nbsp;|&nbsp; B: 5 (33%) &nbsp;|&nbsp; C: 2 (13%) &nbsp;|&nbsp; D: 3 (20%)
+  </div>
+  
+  <div class="info-box">
+    <strong>Cognitive Level Distribution:</strong><br>
+    Remember: 5 (33%) &nbsp;|&nbsp; Understand: 5 (33%) &nbsp;|&nbsp; Apply: 4 (27%) &nbsp;|&nbsp; Analyse: 1 (7%)
+  </div>
+  
+  <div class="footer">284</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5: MARKING SCHEME
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Marking Scheme Layout</div>
+  <div class="header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Marking Schemes</span>
+  </div>
+  
+  <h2 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 16pt; margin-bottom: 3mm;">
+    Paper 1: Agricultural Tools and Machinery
+  </h2>
+  
+  <div class="section-header" style="text-align: left; font-size: 11pt; margin: 3mm 0;">
+    SECTION B: THEORY — MARKING SCHEME
+  </div>
+  
+  <div class="info-box" style="margin-bottom: 5mm; font-size: 9pt;">
+    <strong>General Marking Notes:</strong>
+    Award method marks (M) for correct approach. Award accuracy marks (A) for correct final answer.
+    Accept reasonable alternative answers. Do not penalise spelling errors unless meaning is changed.
+  </div>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 13pt; margin: 5mm 0 3mm 0;">
+    Question 1 <span style="font-weight: normal; font-size: 11pt; color: #666;">[Total: 16 marks]</span>
+  </h3>
+  
+  <div style="margin-left: 3mm; margin-bottom: 4mm;">
+    <strong>(a) Define the term <em>agricultural tool</em>. [2 marks]</strong>
+  </div>
+  
+  <div style="margin-left: 11mm; margin-bottom: 3mm; border-left: 2px solid #333; padding-left: 8px; font-size: 10.5pt;">
+    An agricultural tool is any instrument or device <span style="color: #666; font-style: italic;">[1M]</span>
+    used by farmers to carry out farming activities <span style="color: #666; font-style: italic;">[1M]</span>.
+  </div>
+  
+  <div style="margin-left: 11mm; margin-bottom: 5mm; font-size: 9pt; font-style: italic; color: #666;">
+    Alternative: An agricultural tool is a device used on the farm to make farm work easier. [Accept]
+  </div>
+  
+  <div style="margin-left: 3mm; margin-bottom: 4mm;">
+    <strong>(b) State four differences between simple and mechanical agricultural tools. [8 marks]</strong>
+  </div>
+  
+  <table class="stats-table" style="margin-left: 11mm; width: calc(100% - 14mm); margin-bottom: 5mm;">
+    <thead>
+      <tr>
+        <th style="width: 50%;">Simple Tools</th>
+        <th style="width: 50%;">Mechanical Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Operated by hand <span style="color: #666; font-style: italic;">[1M]</span></td>
+        <td>Powered by engine or motor <span style="color: #666; font-style: italic;">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Cheaper to buy <span style="color: #666; font-style: italic;">[1M]</span></td>
+        <td>More expensive <span style="color: #666; font-style: italic;">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Suitable for small farms <span style="color: #666; font-style: italic;">[1M]</span></td>
+        <td>Suitable for large farms <span style="color: #666; font-style: italic;">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Slower in operation <span style="color: #666; font-style: italic;">[1M]</span></td>
+        <td>Faster in operation <span style="color: #666; font-style: italic;">[1M]</span></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div style="margin-left: 11mm; font-size: 9pt; font-style: italic; color: #666;">
+    Other acceptable differences: requires less skill / requires more skill;
+    lower maintenance / higher maintenance. [Award 1M for each valid difference, max 8 marks]
+  </div>
+  
+  <div class="footer">290</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 6: PRODUCTION SUMMARY
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-label">Production Summary</div>
+  
+  <h2 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 20pt; margin-bottom: 6mm;">
+    Production Summary
+  </h2>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 14pt; margin: 5mm 0 3mm 0;">
+    Book Generated
+  </h3>
+  
+  <table class="stats-table">
+    <tr><td style="font-weight: bold; width: 180px;">Title</td><td>Integrated Science for Basic 7 — BECE Mock Examinations</td></tr>
+    <tr><td style="font-weight: bold;">Pages</td><td>153</td></tr>
+    <tr><td style="font-weight: bold;">Papers</td><td>20 complete BECE Mock examinations</td></tr>
+    <tr><td style="font-weight: bold;">MCQs</td><td>800 questions with A/B/C/D options</td></tr>
+    <tr><td style="font-weight: bold;">Theory Questions</td><td>143 questions with marks allocations</td></tr>
+    <tr><td style="font-weight: bold;">Format</td><td>A4 (210 × 297 mm)</td></tr>
+    <tr><td style="font-weight: bold;">File Size</td><td>326 KB (PDF)</td></tr>
+  </table>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 14pt; margin: 6mm 0 3mm 0;">
+    Design System Applied
+  </h3>
+  
+  <table class="stats-table">
+    <tr><td style="font-weight: bold; width: 180px;">Heading Font</td><td>Source Sans Pro (DejaVu Sans in PDF)</td></tr>
+    <tr><td style="font-weight: bold;">Body Font</td><td>Libre Baskerville (DejaVu Serif in PDF)</td></tr>
+    <tr><td style="font-weight: bold;">Page Size</td><td>A4 (210 × 297 mm)</td></tr>
+    <tr><td style="font-weight: bold;">Margins</td><td>20mm top/bottom/outside, 25mm gutter</td></tr>
+    <tr><td style="font-weight: bold;">Headers</td><td>Book title (left) / Paper title (right)</td></tr>
+    <tr><td style="font-weight: bold;">Page Numbers</td><td>Footer, right-aligned</td></tr>
+    <tr><td style="font-weight: bold;">Unicode Support</td><td>H₂O, CO₂, GH₵, °C, ², ³, √</td></tr>
+  </table>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 14pt; margin: 6mm 0 3mm 0;">
+    Files Generated
+  </h3>
+  
+  <table class="stats-table">
+    <tr>
+      <td style="font-weight: bold; width: 180px;">PDF (Print-Ready)</td>
+      <td><code>production/books/Integrated_Science_Basic7_BECE_Mocks.pdf</code></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">HTML Preview</td>
+      <td><code>production/books/Typesetting_Preview.html</code> (this file)</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">Typesetting Engine</td>
+      <td><code>production/beacon_publisher.py</code></td>
+    </tr>
+  </table>
+  
+  <h3 style="font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 14pt; margin: 6mm 0 3mm 0;">
+    Next Steps
+  </h3>
+  
+  <table class="stats-table">
+    <thead>
+      <tr><th>#</th><th>Task</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Review this preview for layout and typography</td><td class="check">← You are here</td></tr>
+      <tr><td>2</td><td>Refine typesetting based on feedback</td><td>Ready</td></tr>
+      <tr><td>3</td><td>Add 22 Diagram Mode papers to the book</td><td>Ready</td></tr>
+      <tr><td>4</td><td>Compile answer keys from embedded sections</td><td>Ready</td></tr>
+      <tr><td>5</td><td>Generate B8 Science book</td><td>Ready</td></tr>
+      <tr><td>6</td><td>Generate B9 Science book</td><td>Ready</td></tr>
+      <tr><td>7</td><td>Generate B7/B8/B9 Maths books</td><td>Ready</td></tr>
+      <tr><td>8</td><td>Create 35 missing answer keys</td><td>Ready</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

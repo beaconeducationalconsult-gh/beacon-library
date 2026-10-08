@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Library - Design System Preview</title>
+<style>
+  /* ============================================
+     BEACON EDUCATIONAL LIBRARY
+     DESIGN SYSTEM PREVIEW
+     Phase 9: Typesetting & Layout
+     ============================================ */
+
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&family=Source+Serif+Pro:wght@400;600&display=swap');
+
+  :root {
+    /* Typography */
+    --font-display: 'Alegreya', Georgia, serif;
+    --font-body: 'Source Serif Pro', 'Times New Roman', serif;
+    --font-math: 'Cambria Math', 'Times New Roman', serif;
+
+    /* Colours (Print-safe grayscale) */
+    --k100: #000000;
+    --k80: #333333;
+    --k60: #666666;
+    --k40: #999999;
+    --k20: #cccccc;
+    --k10: #e6e6e6;
+    --k05: #f3f3f3;
+    --paper: #ffffff;
+
+    /* Spacing (based on 7pt baseline grid) */
+    --space-xs: 3px;
+    --space-sm: 7px;
+    --space-md: 14px;
+    --space-lg: 21px;
+    --space-xl: 28px;
+    --space-2xl: 42px;
+    --space-3xl: 56px;
+
+    /* Page dimensions (A4 at 96dpi ≈ 794px wide) */
+    --page-width: 794px;
+    --page-height: 1123px;
+    --margin-top: 76px;    /* 20mm */
+    --margin-bottom: 76px; /* 20mm */
+    --margin-outside: 76px; /* 20mm */
+    --margin-gutter: 95px;  /* 25mm */
+    --content-width: 608px; /* ~160mm */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #e0e0e0;
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 15pt;
+    color: var(--k100);
+  }
+
+  /* Page Container */
+  .page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    margin: 30px auto;
+    background: var(--paper);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    position: relative;
+    padding: var(--margin-top) var(--margin-outside) var(--margin-bottom) var(--margin-gutter);
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .page.right {
+    padding: var(--margin-top) var(--margin-gutter) var(--margin-bottom) var(--margin-outside);
+  }
+
+  /* Running Headers */
+  .running-header {
+    position: absolute;
+    top: 38px;
+    left: var(--margin-gutter);
+    right: var(--margin-outside);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 9pt;
+    letter-spacing: 0.5pt;
+    text-transform: uppercase;
+    color: var(--k60);
+    border-bottom: 0.5pt solid var(--k20);
+    padding-bottom: 7px;
+  }
+
+  .running-header.right {
+    left: var(--margin-outside);
+    right: var(--margin-gutter);
+  }
+
+  /* Page Numbers */
+  .page-number {
+    position: absolute;
+    bottom: 38px;
+    font-family: var(--font-body);
+    font-size: 10pt;
+    color: var(--k80);
+  }
+
+  .page-number.centre {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .page-number.right {
+    right: var(--margin-gutter);
+  }
+
+  .page-number.left {
+    left: var(--margin-gutter);
+  }
+
+  /* ============================================
+     TITLE PAGE
+     ============================================ */
+  .title-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--margin-top) var(--margin-outside) var(--margin-bottom) var(--margin-outside);
+  }
+
+  .series-title {
+    font-family: var(--font-display);
+    font-size: 14pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3pt;
+    color: var(--k80);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .book-title {
+    font-family: var(--font-display);
+    font-size: 36pt;
+    font-weight: 900;
+    line-height: 42pt;
+    color: var(--k100);
+    margin-bottom: var(--space-xl);
+  }
+
+  .book-subtitle {
+    font-family: var(--font-body);
+    font-size: 16pt;
+    line-height: 22pt;
+    color: var(--k80);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .book-description {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    line-height: 18pt;
+    color: var(--k60);
+    max-width: 400px;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .book-features {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 18pt;
+    text-align: left;
+    color: var(--k80);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .book-features ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .book-features li::before {
+    content: "•";
+    margin-right: 8px;
+    color: var(--k60);
+  }
+
+  .publisher-info {
+    font-family: var(--font-display);
+    font-size: 11pt;
+    color: var(--k60);
+    margin-top: auto;
+  }
+
+  /* ============================================
+     CHAPTER OPENER
+     ============================================ */
+  .chapter-opener {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 120px;
+  }
+
+  .chapter-number {
+    font-family: var(--font-display);
+    font-size: 48pt;
+    font-weight: 900;
+    color: var(--k100);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+  }
+
+  .chapter-title {
+    font-family: var(--font-display);
+    font-size: 28pt;
+    font-weight: 700;
+    color: var(--k100);
+    line-height: 34pt;
+    margin-bottom: var(--space-lg);
+  }
+
+  .chapter-description {
+    font-family: var(--font-body);
+    font-size: 13pt;
+    line-height: 18pt;
+    color: var(--k60);
+    max-width: 480px;
+  }
+
+  .chapter-rule {
+    width: 100%;
+    height: 2pt;
+    background: var(--k100);
+    margin: var(--space-lg) 0;
+    border: none;
+  }
+
+  /* ============================================
+     HEADINGS
+     ============================================ */
+  h1 {
+    font-family: var(--font-display);
+    font-size: 20pt;
+    font-weight: 700;
+    line-height: 24pt;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-lg);
+    color: var(--k100);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 20pt;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    color: var(--k100);
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 16pt;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    color: var(--k100);
+  }
+
+  /* ============================================
+     BODY TEXT
+     ============================================ */
+  p {
+    margin-bottom: var(--space-sm);
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    text-align: center;
+    margin-bottom: var(--space-sm);
+  }
+
+  .instruction {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 15pt;
+    text-align: center;
+    color: var(--k80);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ============================================
+     PAPER HEADER
+     ============================================ */
+  .paper-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 0.5pt solid var(--k20);
+  }
+
+  .paper-title {
+    font-family: var(--font-display);
+    font-size: 16pt;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .paper-meta {
+    font-family: var(--font-body);
+    font-size: 10pt;
+    color: var(--k60);
+    line-height: 14pt;
+  }
+
+  /* ============================================
+     QUESTIONS
+     ============================================ */
+  .question {
+    margin-bottom: var(--space-md);
+    padding-left: 42px;
+    text-indent: -42px;
+  }
+
+  .question-number {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11pt;
+  }
+
+  .question-text {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 15pt;
+  }
+
+  .marks {
+    font-style: italic;
+    color: var(--k60);
+    font-size: 10pt;
+  }
+
+  .options {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    padding-left: 63px;
+  }
+
+  .option {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    line-height: 15pt;
+    margin-bottom: var(--space-xs);
+    text-indent: 0;
+  }
+
+  .option-letter {
+    margin-right: 6px;
+  }
+
+  /* Theory sub-questions */
+  .sub-question {
+    margin-left: 21px;
+    margin-bottom: var(--space-sm);
+    padding-left: 28px;
+    text-indent: -28px;
+  }
+
+  .sub-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  /* ============================================
+     ANSWER KEY TABLE
+     ============================================ */
+  .answer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-md) 0;
+    font-size: 10pt;
+  }
+
+  .answer-table thead th {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.5pt;
+    text-align: left;
+    padding: 5px 8px;
+    border-bottom: 1pt solid var(--k100);
+    color: var(--k80);
+  }
+
+  .answer-table tbody td {
+    font-family: var(--font-body);
+    padding: 3px 8px;
+    border-bottom: 0.25pt solid var(--k20);
+    vertical-align: top;
+  }
+
+  .answer-table tbody td:first-child {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-align: center;
+    width: 40px;
+  }
+
+  .answer-table tbody td:nth-child(2) {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-align: center;
+    width: 50px;
+  }
+
+  /* ============================================
+     MARKING SCHEME
+     ============================================ */
+  .marking-note {
+    border: 0.5pt solid var(--k20);
+    background: var(--k05);
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    font-size: 9pt;
+    line-height: 13pt;
+  }
+
+  .marking-note strong {
+    font-family: var(--font-display);
+  }
+
+  .answer-block {
+    margin-left: 21px;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    border-left: 2pt solid var(--k100);
+  }
+
+  .alternative {
+    font-size: 9pt;
+    font-style: italic;
+    color: var(--k60);
+    margin-left: 21px;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* ============================================
+     INFO BOX
+     ============================================ */
+  .info-box {
+    border: 0.5pt solid var(--k100);
+    background: var(--k05);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+    font-size: 10pt;
+    line-height: 14pt;
+  }
+
+  .info-box-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10pt;
+    margin-bottom: var(--space-xs);
+  }
+
+  /* ============================================
+     TABLE OF CONTENTS
+     ============================================ */
+  .toc-title {
+    font-family: var(--font-display);
+    font-size: 20pt;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .toc-strand {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    font-weight: 700;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .toc-strand .toc-page {
+    font-weight: 400;
+  }
+
+  .toc-entry {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    margin-left: 21px;
+    margin-bottom: var(--space-xs);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .toc-entry .toc-page {
+    color: var(--k60);
+  }
+
+  .toc-dots {
+    flex: 1;
+    border-bottom: 1pt dotted var(--k20);
+    margin: 0 6px;
+    position: relative;
+    top: -3px;
+  }
+
+  /* ============================================
+     SCIENTIFIC NOTATION
+     ============================================ */
+  .chem {
+    font-family: var(--font-math);
+  }
+
+  .chem sub {
+    font-size: 0.75em;
+    vertical-align: sub;
+  }
+
+  .chem sup {
+    font-size: 0.75em;
+    vertical-align: super;
+  }
+
+  /* ============================================
+     PREVIEW LABEL
+     ============================================ */
+  .preview-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--k100);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-family: var(--font-display);
+    font-size: 12pt;
+    z-index: 1000;
+    letter-spacing: 1pt;
+  }
+
+  .page-label {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 10pt;
+    color: var(--k60);
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+  }
+
+  /* ============================================
+     DISTRIBUTION BAR
+     ============================================ */
+  .distribution-bar {
+    display: flex;
+    width: 100%;
+    height: 14px;
+    margin: var(--space-sm) 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .distribution-bar .segment {
+    height: 100%;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 9pt;
+    color: var(--k80);
+    margin-top: var(--space-xs);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .legend-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="preview-label">
+  BEACON LIBRARY — DESIGN SYSTEM PREVIEW (Phase 9)
+</div>
+
+<!-- ============================================
+     PAGE 1: TITLE PAGE
+     ============================================ -->
+<div class="page title-page" style="padding-left: var(--margin-outside);">
+  <div class="page-label">Title Page</div>
+
+  <div class="series-title">Beacon Educational Series</div>
+
+  <div class="book-title">Integrated Science<br>for Basic 7</div>
+
+  <div class="book-subtitle">A Comprehensive Question Bank<br>with Marking Schemes</div>
+
+  <div class="book-description">
+    Curriculum-Aligned Practice Papers<br>
+    for JHS 1 Students and Teachers
+  </div>
+
+  <div class="book-features">
+    <ul>
+      <li>22 Topic-Based Papers</li>
+      <li>5 Strand-Based Mock Examinations</li>
+      <li>Complete Answer Keys &amp; Marking Schemes</li>
+      <li>Curriculum Coverage Matrix</li>
+    </ul>
+  </div>
+
+  <div class="publisher-info">
+    Beacon Educational Consult<br>
+    2026 Edition
+  </div>
+
+  <div class="page-number centre">i</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 2: TABLE OF CONTENTS
+     ============================================ -->
+<div class="page right">
+  <div class="page-label">Table of Contents</div>
+  <div class="running-header right">
+    <span>Integrated Science for Basic 7</span>
+    <span>Contents</span>
+  </div>
+
+  <div class="toc-title">CONTENTS</div>
+
+  <div class="toc-strand">
+    <span>STRAND 1: DIVERSITY OF MATTER</span>
+    <span class="toc-page">1</span>
+  </div>
+  <div class="toc-entry">
+    <span>1.1 Materials and Their Properties</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">2</span>
+  </div>
+  <div class="toc-entry">
+    <span>1.2 Mixtures and Separation Techniques</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">15</span>
+  </div>
+  <div class="toc-entry">
+    <span>1.3 Metals and Non-metals</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">28</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>STRAND 2: CYCLES</span>
+    <span class="toc-page">38</span>
+  </div>
+  <div class="toc-entry">
+    <span>2.1 The Water Cycle</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">39</span>
+  </div>
+  <div class="toc-entry">
+    <span>2.2 Life Cycles of Organisms</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">52</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>STRAND 3: SYSTEMS</span>
+    <span class="toc-page">68</span>
+  </div>
+  <div class="toc-entry">
+    <span>3.1 The Human Digestive System</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">69</span>
+  </div>
+  <div class="toc-entry">
+    <span>3.2 The Solar System</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">84</span>
+  </div>
+  <div class="toc-entry">
+    <span>3.3 Ecosystems</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">98</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>STRAND 4: ENERGY</span>
+    <span class="toc-page">112</span>
+  </div>
+  <div class="toc-entry">
+    <span>4.1 Forms and Sources of Energy</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">113</span>
+  </div>
+  <div class="toc-entry">
+    <span>4.2 Conservation of Energy</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">128</span>
+  </div>
+  <div class="toc-entry">
+    <span>4.3 Simple Machines</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">142</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>STRAND 5: AGRICULTURE</span>
+    <span class="toc-page">158</span>
+  </div>
+  <div class="toc-entry">
+    <span>5.1 Agricultural Tools and Machinery</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">159</span>
+  </div>
+  <div class="toc-entry">
+    <span>5.2 Crop Production</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">174</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>PRACTICE PAPERS</span>
+    <span class="toc-page">245</span>
+  </div>
+  <div class="toc-entry">
+    <span>Practice Paper 1: General Revision</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">246</span>
+  </div>
+  <div class="toc-entry">
+    <span>Practice Paper 2: General Revision</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">258</span>
+  </div>
+
+  <div class="toc-strand">
+    <span>ANSWER KEY</span>
+    <span class="toc-page">283</span>
+  </div>
+  <div class="toc-entry">
+    <span>Section A Answers</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">284</span>
+  </div>
+  <div class="toc-entry">
+    <span>Section B Marking Schemes</span>
+    <span class="toc-dots"></span>
+    <span class="toc-page">290</span>
+  </div>
+
+  <div class="page-number centre">iii</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 3: CHAPTER OPENER
+     ============================================ -->
+<div class="page">
+  <div class="page-label">Chapter Opener</div>
+
+  <div class="chapter-opener">
+    <div class="chapter-number">STRAND 1</div>
+    <div class="chapter-title">Diversity of Matter</div>
+    <hr class="chapter-rule">
+    <div class="chapter-description">
+      Understanding the properties of materials and how they can be
+      separated and combined. This strand covers the classification of
+      matter, the properties of metals and non-metals, and techniques
+      for separating mixtures.
+    </div>
+  </div>
+
+  <div class="page-number right">1</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 4: SECTION A — MCQ QUESTIONS
+     ============================================ -->
+<div class="page right">
+  <div class="page-label">Section A: MCQ Question Layout</div>
+  <div class="running-header right">
+    <span>Integrated Science for Basic 7</span>
+    <span>Paper 15: Agricultural Tools</span>
+  </div>
+
+  <div class="paper-header">
+    <div class="paper-title">PAPER 15: AGRICULTURAL TOOLS AND MACHINERY</div>
+    <div class="paper-meta">
+      Time Allowed: 2 hours &nbsp;|&nbsp; Total Marks: 100
+    </div>
+  </div>
+
+  <div class="section-label">SECTION A: OBJECTIVE TEST</div>
+  <div class="instruction">
+    Answer <strong>all</strong> questions. Each question carries 1 mark.<br>
+    Choose the <strong>best</strong> answer (A, B, C or D).
+  </div>
+
+  <div class="question">
+    <span class="question-number">1.</span>
+    <span class="question-text">A simple agricultural tool is one that is</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> made entirely of plastic</div>
+      <div class="option"><span class="option-letter">B.</span> driven by a diesel engine</div>
+      <div class="option"><span class="option-letter">C.</span> operated by hand and needs no engine</div>
+      <div class="option"><span class="option-letter">D.</span> used only on very large farms</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">2.</span>
+    <span class="question-text">The tool used mainly for clearing weeds and cutting down bushes on a farm is the</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> rake</div>
+      <div class="option"><span class="option-letter">B.</span> garden trowel</div>
+      <div class="option"><span class="option-letter">C.</span> watering can</div>
+      <div class="option"><span class="option-letter">D.</span> cutlass</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">3.</span>
+    <span class="question-text">The farm tool used for making ridges, mounds and weeding is the</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> wheelbarrow</div>
+      <div class="option"><span class="option-letter">B.</span> hoe</div>
+      <div class="option"><span class="option-letter">C.</span> secateurs</div>
+      <div class="option"><span class="option-letter">D.</span> measuring tape</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">4.</span>
+    <span class="question-text">Which of the following is a mechanical agricultural tool?</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> Hand trowel</div>
+      <div class="option"><span class="option-letter">B.</span> Tractor-drawn plough</div>
+      <div class="option"><span class="option-letter">C.</span> Cutlass</div>
+      <div class="option"><span class="option-letter">D.</span> Garden fork</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">5.</span>
+    <span class="question-text">The tool best suited for transplanting seedlings is the</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> garden trowel</div>
+      <div class="option"><span class="option-letter">B.</span> hoe</div>
+      <div class="option"><span class="option-letter">C.</span> rake</div>
+      <div class="option"><span class="option-letter">D.</span> axe</div>
+    </div>
+  </div>
+
+  <div class="page-number left">4</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 5: SECTION B — THEORY QUESTIONS
+     ============================================ -->
+<div class="page">
+  <div class="page-label">Section B: Theory Question Layout</div>
+  <div class="running-header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Paper 15: Agricultural Tools</span>
+  </div>
+
+  <div class="section-label" style="margin-top: 14px;">SECTION B: THEORY</div>
+  <div class="instruction">
+    Answer any <strong>four</strong> questions from this section.
+  </div>
+
+  <h2>Question 1</h2>
+
+  <div class="sub-question">
+    <span class="sub-label">(a)</span>
+    Define the term <em>agricultural tool</em>. <span class="marks">[2 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(b)</span>
+    State <strong>four</strong> differences between simple and mechanical agricultural tools. <span class="marks">[8 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(c)</span>
+    Name <strong>three</strong> simple agricultural tools used in crop production and state one use of each. <span class="marks">[6 marks]</span>
+  </div>
+
+  <h2>Question 2</h2>
+
+  <div class="sub-question">
+    <span class="sub-label">(a)</span>
+    What is photosynthesis? <span class="marks">[2 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(b)</span>
+    Write the word equation for photosynthesis. <span class="marks">[3 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(c)</span>
+    Explain <strong>three</strong> conditions necessary for photosynthesis to take place. <span class="marks">[6 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(d)</span>
+    A farmer noticed that crops grown under a shade produced less food than those in direct sunlight. Explain this observation using your knowledge of photosynthesis. <span class="marks">[3 marks]</span>
+  </div>
+
+  <h2>Question 3</h2>
+
+  <div class="sub-question">
+    <span class="sub-label">(a)</span>
+    Define the term <em>mixture</em>. <span class="marks">[2 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(b)</span>
+    Describe how you would separate a mixture of sand, salt, and iron filings. <span class="marks">[8 marks]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(c)</span>
+    Calculate the percentage of salt in a 200 g sample of seawater if it contains 7 g of dissolved salt. <span class="marks">[4 marks]</span>
+  </div>
+
+  <div class="page-number right">5</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 6: ANSWER KEY — SECTION A TABLE
+     ============================================ -->
+<div class="page right">
+  <div class="page-label">Answer Key: Section A Table</div>
+  <div class="running-header right">
+    <span>Integrated Science for Basic 7</span>
+    <span>Answer Key</span>
+  </div>
+
+  <h1 style="margin-top: 0;">ANSWER KEY</h1>
+
+  <h2>Paper 15: Agricultural Tools and Machinery</h2>
+
+  <h3>SECTION A: OBJECTIVE TEST</h3>
+  <p style="margin-bottom: 7px;">Total Marks: 40</p>
+
+  <table class="answer-table">
+    <thead>
+      <tr>
+        <th>Q</th>
+        <th>Ans</th>
+        <th>Curriculum Area</th>
+        <th>Cognitive Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>C</strong></td><td>Agricultural tools — classification</td><td>Remember</td></tr>
+      <tr><td>2</td><td><strong>D</strong></td><td>Agricultural tools — uses</td><td>Remember</td></tr>
+      <tr><td>3</td><td><strong>B</strong></td><td>Agricultural tools — uses</td><td>Remember</td></tr>
+      <tr><td>4</td><td><strong>B</strong></td><td>Mechanical tools — identification</td><td>Understand</td></tr>
+      <tr><td>5</td><td><strong>A</strong></td><td>Agricultural tools — uses</td><td>Apply</td></tr>
+      <tr><td>6</td><td><strong>C</strong></td><td>Farm safety</td><td>Understand</td></tr>
+      <tr><td>7</td><td><strong>A</strong></td><td>Tool maintenance</td><td>Remember</td></tr>
+      <tr><td>8</td><td><strong>D</strong></td><td>Agricultural tools — uses</td><td>Apply</td></tr>
+      <tr><td>9</td><td><strong>B</strong></td><td>Mechanical tools — classification</td><td>Understand</td></tr>
+      <tr><td>10</td><td><strong>C</strong></td><td>Crop production — tools</td><td>Apply</td></tr>
+      <tr><td>11</td><td><strong>A</strong></td><td>Soil preparation</td><td>Remember</td></tr>
+      <tr><td>12</td><td><strong>B</strong></td><td>Irrigation — tools</td><td>Understand</td></tr>
+      <tr><td>13</td><td><strong>D</strong></td><td>Harvesting — tools</td><td>Remember</td></tr>
+      <tr><td>14</td><td><strong>C</strong></td><td>Tool safety</td><td>Apply</td></tr>
+      <tr><td>15</td><td><strong>A</strong></td><td>Storage of tools</td><td>Understand</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-box">
+    <div class="info-box-title">Answer Distribution</div>
+    A: 5 (33%) &nbsp;|&nbsp; B: 4 (27%) &nbsp;|&nbsp; C: 4 (27%) &nbsp;|&nbsp; D: 2 (13%)
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Cognitive Level Distribution</div>
+    <div class="distribution-bar">
+      <div class="segment" style="width: 33%; background: var(--k100);"></div>
+      <div class="segment" style="width: 33%; background: var(--k60);"></div>
+      <div class="segment" style="width: 27%; background: var(--k40);"></div>
+      <div class="segment" style="width: 7%; background: var(--k20);"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background: var(--k100);"></div> Remember (33%)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: var(--k60);"></div> Understand (33%)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: var(--k40);"></div> Apply (27%)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background: var(--k20);"></div> Analyse (7%)</div>
+    </div>
+  </div>
+
+  <div class="page-number left">284</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 7: MARKING SCHEME — SECTION B
+     ============================================ -->
+<div class="page">
+  <div class="page-label">Marking Scheme: Section B Layout</div>
+  <div class="running-header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Marking Schemes</span>
+  </div>
+
+  <h2 style="margin-top: 0;">Paper 15: Agricultural Tools and Machinery</h2>
+
+  <h3>SECTION B: THEORY — MARKING SCHEME</h3>
+
+  <h2>Question 1 <span class="marks" style="font-weight: 400; font-size: 11pt;">[Total: 16 marks]</span></h2>
+
+  <div class="marking-note">
+    <strong>Marking Notes:</strong>
+    Award method marks (M) for correct approach. Award accuracy marks (A) for correct final answer.
+    Accept reasonable alternative answers. Do not penalise spelling errors unless meaning is changed.
+  </div>
+
+  <p><strong>(a) Define the term <em>agricultural tool</em>. [2 marks]</strong></p>
+
+  <div class="answer-block">
+    An agricultural tool is any instrument or device <span class="marks">[1M]</span>
+    used by farmers to carry out farming activities <span class="marks">[1M]</span>.
+  </div>
+
+  <div class="alternative">
+    Alternative: An agricultural tool is a device used on the farm to make farm work easier. [Accept]
+  </div>
+
+  <p><strong>(b) State four differences between simple and mechanical agricultural tools. [8 marks]</strong></p>
+
+  <table class="answer-table" style="margin-top: 7px;">
+    <thead>
+      <tr>
+        <th style="width: 50%; text-align: left;">Simple Tools</th>
+        <th style="width: 50%; text-align: left;">Mechanical Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Operated by hand <span class="marks">[1M]</span></td>
+        <td>Powered by engine or motor <span class="marks">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Cheaper to buy <span class="marks">[1M]</span></td>
+        <td>More expensive <span class="marks">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Suitable for small farms <span class="marks">[1M]</span></td>
+        <td>Suitable for large farms <span class="marks">[1M]</span></td>
+      </tr>
+      <tr>
+        <td>Slower in operation <span class="marks">[1M]</span></td>
+        <td>Faster in operation <span class="marks">[1M]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alternative" style="margin-top: 7px;">
+    Other acceptable differences: requires less skill / requires more skill;
+    less labour-intensive / more labour-intensive; lower maintenance / higher maintenance.
+    [Award 1M for each valid difference, max 8 marks]
+  </div>
+
+  <p style="margin-top: 14px;"><strong>(c) Name three simple agricultural tools used in crop production and state one use of each. [6 marks]</strong></p>
+
+  <div class="answer-block">
+    <table class="answer-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th style="text-align: left;">Tool</th>
+          <th style="text-align: left;">Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cutlass <span class="marks">[1M]</span></td>
+          <td>Clearing weeds and cutting bushes <span class="marks">[1M]</span></td>
+        </tr>
+        <tr>
+          <td>Hoe <span class="marks">[1M]</span></td>
+          <td>Making ridges and mounds <span class="marks">[1M]</span></td>
+        </tr>
+        <tr>
+          <td>Garden trowel <span class="marks">[1M]</span></td>
+          <td>Transplanting seedlings <span class="marks">[1M]</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alternative">
+    Other acceptable tools: rake (levelling soil), garden fork (turning compost),
+    watering can (watering plants), wheelbarrow (carrying materials).
+    [1M for tool name, 1M for correct use, max 6 marks]
+  </div>
+
+  <div class="page-number right">290</div>
+</div>
+
+
+<!-- ============================================
+     PAGE 8: SCIENTIFIC NOTATION SAMPLE
+     ============================================ -->
+<div class="page right">
+  <div class="page-label">Scientific Notation &amp; Chemical Formulae</div>
+  <div class="running-header right">
+    <span>Integrated Science for Basic 8</span>
+    <span>Chemical Compounds</span>
+  </div>
+
+  <h1 style="margin-top: 0;">Chemical Compounds and Reactions</h1>
+
+  <h2>Section A: Objective Test</h2>
+
+  <div class="question">
+    <span class="question-number">1.</span>
+    <span class="question-text">The chemical formula for water is</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> HO</div>
+      <div class="option"><span class="option-letter">B.</span> <span class="chem">H<sub>2</sub>O</span></div>
+      <div class="option"><span class="option-letter">C.</span> <span class="chem">H<sub>2</sub>O<sub>2</sub></span></div>
+      <div class="option"><span class="option-letter">D.</span> <span class="chem">OH<sub>2</sub></span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">2.</span>
+    <span class="question-text">Carbon dioxide is represented by the formula</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> <span class="chem">CO</span></div>
+      <div class="option"><span class="option-letter">B.</span> <span class="chem">C<sub>2</sub>O</span></div>
+      <div class="option"><span class="option-letter">C.</span> <span class="chem">CO<sub>2</sub></span></div>
+      <div class="option"><span class="option-letter">D.</span> <span class="chem">C<sub>2</sub>O<sub>2</sub></span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <span class="question-number">3.</span>
+    <span class="question-text">When sodium (<span class="chem">Na</span>) reacts with chlorine (<span class="chem">Cl<sub>2</sub></span>), the product is</span>
+    <div class="options">
+      <div class="option"><span class="option-letter">A.</span> <span class="chem">NaCl<sub>2</sub></span></div>
+      <div class="option"><span class="option-letter">B.</span> <span class="chem">Na<sub>2</sub>Cl</span></div>
+      <div class="option"><span class="option-letter">C.</span> <span class="chem">NaCl</span></div>
+      <div class="option"><span class="option-letter">D.</span> <span class="chem">NaCl<sub>3</sub></span></div>
+    </div>
+  </div>
+
+  <h2>Section B: Theory</h2>
+
+  <h2>Question 4</h2>
+
+  <div class="sub-question">
+    <span class="sub-label">(a)</span>
+    Write the balanced chemical equation for the reaction between hydrogen and oxygen to form water. <span class="marks">[3 marks]</span>
+  </div>
+
+  <div class="answer-block">
+    <span class="chem" style="font-size: 12pt;">2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O</span>
+    <br>
+    <span class="marks" style="font-size: 9pt;">[1M for correct reactants, 1M for correct products, 1A for correct balancing]</span>
+  </div>
+
+  <div class="sub-question">
+    <span class="sub-label">(b)</span>
+    Calculate the volume of <span class="chem">CO<sub>2</sub></span> produced when 50 cm³ of methane (<span class="chem">CH<sub>4</sub></span>) burns completely in oxygen. <span class="marks">[4 marks]</span>
+  </div>
+
+  <div class="answer-block">
+    <p style="margin-bottom: 3px;"><span class="chem">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</span> <span class="marks">[1M for equation]</span></p>
+    <p style="margin-bottom: 3px;">From the equation: 1 volume of <span class="chem">CH<sub>4</sub></span> produces 1 volume of <span class="chem">CO<sub>2</sub></span> <span class="marks">[1M]</span></p>
+    <p style="margin-bottom: 3px;">Therefore: 50 cm³ of <span class="chem">CH<sub>4</sub></span> produces 50 cm³ of <span class="chem">CO<sub>2</sub></span> <span class="marks">[1A]</span></p>
+    <p><strong>Volume of CO<sub>2</sub> = 50 cm³</strong> <span class="marks">[1A]</span></p>
+  </div>
+
+  <div class="page-number left">42</div>
+</div>
+
+
+</body>
+</html>

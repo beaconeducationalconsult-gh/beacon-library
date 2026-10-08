@@ -1,0 +1,247 @@
+{
+  "B7": {
+    "title": "Mathematics Formula Sheet — Basic 7",
+    "sections": [
+      {
+        "name": "Numbers and Operations",
+        "formulas": [
+          {"name": "Place Value", "formula": "Each digit position represents 10× the position to its right"},
+          {"name": "Addition", "formula": "a + b = sum"},
+          {"name": "Subtraction", "formula": "a - b = difference"},
+          {"name": "Multiplication", "formula": "a × b = product"},
+          {"name": "Division", "formula": "a ÷ b = quotient"},
+          {"name": "Order of Operations", "formula": "BODMAS: Brackets, Orders, Division, Multiplication, Addition, Subtraction"},
+          {"name": "Factors", "formula": "Numbers that divide exactly into another number"},
+          {"name": "Multiples", "formula": "Results of multiplying a number by whole numbers"},
+          {"name": "HCF (Highest Common Factor)", "formula": "Largest number that divides two or more numbers"},
+          {"name": "LCM (Lowest Common Multiple)", "formula": "Smallest number that is a multiple of two or more numbers"}
+        ]
+      },
+      {
+        "name": "Fractions, Decimals, and Percentages",
+        "formulas": [
+          {"name": "Fraction", "formula": "numerator / denominator"},
+          {"name": "Equivalent Fractions", "formula": "a/b = (a×n)/(b×n)"},
+          {"name": "Fraction to Decimal", "formula": "a/b = a ÷ b"},
+          {"name": "Decimal to Fraction", "formula": "0.x = x/10, 0.xy = xy/100"},
+          {"name": "Fraction to Percentage", "formula": "a/b × 100%"},
+          {"name": "Percentage to Fraction", "formula": "x% = x/100"},
+          {"name": "Percentage to Decimal", "formula": "x% = x/100 = 0.x"},
+          {"name": "Percentage of a Number", "formula": "x% of y = (x/100) × y"},
+          {"name": "Profit/Loss Percentage", "formula": "(Profit or Loss / Cost Price) × 100%"}
+        ]
+      },
+      {
+        "name": "Algebra",
+        "formulas": [
+          {"name": "Variable", "formula": "A letter representing an unknown value"},
+          {"name": "Expression", "formula": "Combination of numbers and variables (e.g., 2x + 3)"},
+          {"name": "Equation", "formula": "Two expressions set equal (e.g., 2x + 3 = 7)"},
+          {"name": "Solve for x", "formula": "Isolate x on one side of the equation"},
+          {"name": "Substitution", "formula": "Replace variables with their values"}
+        ]
+      },
+      {
+        "name": "Geometry and Measurement",
+        "formulas": [
+          {"name": "Perimeter of Square", "formula": "P = 4 × side"},
+          {"name": "Perimeter of Rectangle", "formula": "P = 2(length + width)"},
+          {"name": "Perimeter of Triangle", "formula": "P = a + b + c"},
+          {"name": "Circumference of Circle", "formula": "C = πd = 2πr"},
+          {"name": "Area of Square", "formula": "A = side × side = side²"},
+          {"name": "Area of Rectangle", "formula": "A = length × width"},
+          {"name": "Area of Triangle", "formula": "A = ½ × base × height"},
+          {"name": "Area of Circle", "formula": "A = πr²"},
+          {"name": "Area of Parallelogram", "formula": "A = base × height"},
+          {"name": "Area of Trapezium", "formula": "A = ½(a + b) × h"},
+          {"name": "Volume of Cube", "formula": "V = side × side × side = side³"},
+          {"name": "Volume of Cuboid", "formula": "V = length × width × height"},
+          {"name": "Angles on a Straight Line", "formula": "Sum = 180°"},
+          {"name": "Angles at a Point", "formula": "Sum = 360°"},
+          {"name": "Angles in a Triangle", "formula": "Sum = 180°"},
+          {"name": "Angles in a Quadrilateral", "formula": "Sum = 360°"},
+          {"name": "Complementary Angles", "formula": "Sum = 90°"},
+          {"name": "Supplementary Angles", "formula": "Sum = 180°"}
+        ]
+      },
+      {
+        "name": "Data Handling",
+        "formulas": [
+          {"name": "Mean (Average)", "formula": "Mean = Sum of all values ÷ Number of values"},
+          {"name": "Median", "formula": "Middle value when data is arranged in order"},
+          {"name": "Mode", "formula": "Most frequently occurring value"},
+          {"name": "Range", "formula": "Range = Highest value - Lowest value"},
+          {"name": "Probability", "formula": "P(event) = Number of favorable outcomes / Total number of outcomes"}
+        ]
+      }
+    ]
+  },
+  "B8": {
+    "title": "Mathematics Formula Sheet — Basic 8",
+    "sections": [
+      {
+        "name": "Numbers and Operations",
+        "formulas": [
+          {"name": "Directed Numbers", "formula": "Positive and negative numbers on the number line"},
+          {"name": "Adding Negatives", "formula": "a + (-b) = a - b"},
+          {"name": "Subtracting Negatives", "formula": "a - (-b) = a + b"},
+          {"name": "Multiplying Signs", "formula": "(+)×(+) = +, (-)×(-) = +, (+)×(-) = -, (-)×(+) = -"},
+          {"name": "Index Notation", "formula": "aⁿ = a × a × ... (n times)"},
+          {"name": "Standard Form", "formula": "a × 10ⁿ where 1 ≤ a < 10"},
+          {"name": "Ratio", "formula": "a : b (comparison of quantities)"},
+          {"name": "Proportion", "formula": "a/b = c/d (equivalent ratios)"},
+          {"name": "Direct Proportion", "formula": "y = kx (y increases as x increases)"},
+          {"name": "Inverse Proportion", "formula": "y = k/x (y decreases as x increases)"},
+          {"name": "Rate", "formula": "Comparison of two different quantities"}
+        ]
+      },
+      {
+        "name": "Algebra",
+        "formulas": [
+          {"name": "Simplify Expressions", "formula": "Combine like terms: 2x + 3x = 5x"},
+          {"name": "Expand Brackets", "formula": "a(b + c) = ab + ac"},
+          {"name": "Factorise", "formula": "ab + ac = a(b + c)"},
+          {"name": "Linear Equation", "formula": "ax + b = c"},
+          {"name": "Solve Linear Equation", "formula": "x = (c - b) / a"},
+          {"name": "Simultaneous Equations", "formula": "Two equations with two unknowns"},
+          {"name": "Inequality", "formula": "a < b, a > b, a ≤ b, a ≥ b"},
+          {"name": "Sequence (nth term)", "formula": "an = a + (n-1)d for arithmetic sequences"},
+          {"name": "Common Difference", "formula": "d = a₂ - a₁"}
+        ]
+      },
+      {
+        "name": "Geometry",
+        "formulas": [
+          {"name": "Pythagoras' Theorem", "formula": "a² + b² = c² (c is hypotenuse)"},
+          {"name": "Distance Formula", "formula": "d = √[(x₂-x₁)² + (y₂-y₁)²]"},
+          {"name": "Midpoint Formula", "formula": "M = ((x₁+x₂)/2, (y₁+y₂)/2)"},
+          {"name": "Gradient of Line", "formula": "m = (y₂-y₁) / (x₂-x₁)"},
+          {"name": "Equation of Line", "formula": "y = mx + c"},
+          {"name": "Volume of Cylinder", "formula": "V = πr²h"},
+          {"name": "Volume of Cone", "formula": "V = ⅓πr²h"},
+          {"name": "Volume of Sphere", "formula": "V = ⁴⁄₃πr³"},
+          {"name": "Surface Area of Cylinder", "formula": "SA = 2πr² + 2πrh"},
+          {"name": "Surface Area of Sphere", "formula": "SA = 4πr²"},
+          {"name": "Interior Angle (Regular Polygon)", "formula": "Each angle = (n-2)×180° / n"},
+          {"name": "Exterior Angle (Regular Polygon)", "formula": "Each angle = 360° / n"},
+          {"name": "Sum of Interior Angles", "formula": "Sum = (n-2) × 180°"},
+          {"name": "Transformations", "formula": "Translation, Rotation, Reflection, Enlargement"}
+        ]
+      },
+      {
+        "name": "Trigonometry",
+        "formulas": [
+          {"name": "SOH", "formula": "sin θ = Opposite / Hypotenuse"},
+          {"name": "CAH", "formula": "cos θ = Adjacent / Hypotenuse"},
+          {"name": "TOA", "formula": "tan θ = Opposite / Adjacent"},
+          {"name": "Find Angle", "formula": "θ = sin⁻¹(O/H), θ = cos⁻¹(A/H), θ = tan⁻¹(O/A)"}
+        ]
+      },
+      {
+        "name": "Statistics and Probability",
+        "formulas": [
+          {"name": "Mean of Grouped Data", "formula": "Mean = Σ(fx) / Σf"},
+          {"name": "Modal Class", "formula": "Class with highest frequency"},
+          {"name": "Median Class", "formula": "Class containing the (n/2)th value"},
+          {"name": "Probability", "formula": "P(A) = n(A) / n(S)"},
+          {"name": "Complement", "formula": "P(A') = 1 - P(A)"},
+          {"name": "Combined Events", "formula": "P(A and B) = P(A) × P(B) for independent events"}
+        ]
+      }
+    ]
+  },
+  "B9": {
+    "title": "Mathematics Formula Sheet — Basic 9",
+    "sections": [
+      {
+        "name": "Number and Financial Mathematics",
+        "formulas": [
+          {"name": "Simple Interest", "formula": "I = PRT / 100"},
+          {"name": "Amount (Simple Interest)", "formula": "A = P + I = P(1 + RT/100)"},
+          {"name": "Compound Interest", "formula": "A = P(1 + R/100)ⁿ"},
+          {"name": "Depreciation", "formula": "V = P(1 - R/100)ⁿ"},
+          {"name": "Profit", "formula": "Profit = Selling Price - Cost Price"},
+          {"name": "Loss", "formula": "Loss = Cost Price - Selling Price"},
+          {"name": "Profit %", "formula": "Profit% = (Profit/Cost Price) × 100"},
+          {"name": "Loss %", "formula": "Loss% = (Loss/Cost Price) × 100"},
+          {"name": "Discount", "formula": "Discount = Marked Price - Selling Price"},
+          {"name": "Discount %", "formula": "Discount% = (Discount/Marked Price) × 100"},
+          {"name": "Commission", "formula": "Commission = Rate × Sales Amount"},
+          {"name": "Tax", "formula": "Tax = Rate × Taxable Income"},
+          {"name": "Exchange Rate", "formula": "Amount in new currency = Amount × Exchange Rate"}
+        ]
+      },
+      {
+        "name": "Algebra",
+        "formulas": [
+          {"name": "Quadratic Equation", "formula": "ax² + bx + c = 0"},
+          {"name": "Quadratic Formula", "formula": "x = (-b ± √(b²-4ac)) / 2a"},
+          {"name": "Factorising Quadratics", "formula": "ax² + bx + c = a(x-p)(x-q)"},
+          {"name": "Completing the Square", "formula": "ax² + bx + c = a(x + b/2a)² + (c - b²/4a)"},
+          {"name": "Discriminant", "formula": "Δ = b² - 4ac"},
+          {"name": "Nature of Roots", "formula": "Δ > 0: two real roots; Δ = 0: equal roots; Δ < 0: no real roots"},
+          {"name": "Sum of Roots", "formula": "α + β = -b/a"},
+          {"name": "Product of Roots", "formula": "α × β = c/a"},
+          {"name": "Laws of Indices", "formula": "aᵐ × aⁿ = aᵐ⁺ⁿ; aᵐ/aⁿ = aᵐ⁻ⁿ; (aᵐ)ⁿ = aᵐⁿ"},
+          {"name": "Negative Index", "formula": "a⁻ⁿ = 1/aⁿ"},
+          {"name": "Fractional Index", "formula": "a^(m/n) = ⁿ√(aᵐ)"},
+          {"name": "Zero Index", "formula": "a⁰ = 1"},
+          {"name": "Variation (Direct)", "formula": "y ∝ x means y = kx"},
+          {"name": "Variation (Inverse)", "formula": "y ∝ 1/x means y = k/x"},
+          {"name": "Joint Variation", "formula": "y ∝ xz means y = kxz"}
+        ]
+      },
+      {
+        "name": "Geometry and Trigonometry",
+        "formulas": [
+          {"name": "Sine Rule", "formula": "a/sin A = b/sin B = c/sin C"},
+          {"name": "Cosine Rule", "formula": "a² = b² + c² - 2bc·cos A"},
+          {"name": "Area of Triangle (Trig)", "formula": "Area = ½ab·sin C"},
+          {"name": "Arc Length", "formula": "s = rθ (θ in radians)"},
+          {"name": "Area of Sector", "formula": "A = ½r²θ (θ in radians)"},
+          {"name": "Radians to Degrees", "formula": "θ° = θ(rad) × 180/π"},
+          {"name": "Degrees to Radians", "formula": "θ(rad) = θ° × π/180"},
+          {"name": "Bearing", "formula": "Angle measured clockwise from north (3 figures)"},
+          {"name": "Angle of Elevation", "formula": "Angle measured upward from horizontal"},
+          {"name": "Angle of Depression", "formula": "Angle measured downward from horizontal"}
+        ]
+      },
+      {
+        "name": "Coordinate Geometry",
+        "formulas": [
+          {"name": "Distance", "formula": "d = √[(x₂-x₁)² + (y₂-y₁)²]"},
+          {"name": "Midpoint", "formula": "M = ((x₁+x₂)/2, (y₁+y₂)/2)"},
+          {"name": "Gradient", "formula": "m = (y₂-y₁)/(x₂-x₁)"},
+          {"name": "Equation of Line", "formula": "y - y₁ = m(x - x₁)"},
+          {"name": "Parallel Lines", "formula": "Same gradient: m₁ = m₂"},
+          {"name": "Perpendicular Lines", "formula": "Product of gradients = -1: m₁ × m₂ = -1"}
+        ]
+      },
+      {
+        "name": "Statistics and Probability",
+        "formulas": [
+          {"name": "Mean (Ungrouped)", "formula": "x̄ = Σx / n"},
+          {"name": "Mean (Grouped)", "formula": "x̄ = Σfx / Σf"},
+          {"name": "Variance", "formula": "σ² = Σf(x-x̄)² / Σf"},
+          {"name": "Standard Deviation", "formula": "σ = √(Variance)"},
+          {"name": "Cumulative Frequency", "formula": "Running total of frequencies"},
+          {"name": "Interquartile Range", "formula": "IQR = Q₃ - Q₁"},
+          {"name": "Probability", "formula": "P(A) = n(A)/n(S)"},
+          {"name": "Mutually Exclusive", "formula": "P(A or B) = P(A) + P(B)"},
+          {"name": "Independent Events", "formula": "P(A and B) = P(A) × P(B)"},
+          {"name": "Tree Diagram", "formula": "Multiply along branches, add between branches"}
+        ]
+      },
+      {
+        "name": "Sets",
+        "formulas": [
+          {"name": "Union", "formula": "A ∪ B = elements in A or B or both"},
+          {"name": "Intersection", "formula": "A ∩ B = elements in both A and B"},
+          {"name": "Complement", "formula": "A' = elements not in A"},
+          {"name": "n(A ∪ B)", "formula": "n(A ∪ B) = n(A) + n(B) - n(A ∩ B)"},
+          {"name": "Subset", "formula": "A ⊂ B means all elements of A are in B"}
+        ]
+      }
+    ]
+  }
+}

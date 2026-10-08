@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Science for Basic 8 - Book Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&family=Source+Serif+Pro:wght@400;600;700&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Source Serif Pro', Georgia, serif;
+  }
+  
+  .cover {
+    width: 210mm;
+    height: 297mm;
+    background: linear-gradient(135deg, #00838f 0%, #26c6da 100%);
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  
+  /* Decorative background pattern */
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 40mm 25mm;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20mm;
+  }
+  
+  .series {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 600;
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8mm;
+  }
+  
+  .title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 42pt;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 5mm;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .subtitle {
+    font-size: 28pt;
+    font-weight: 600;
+    line-height: 1.2;
+    color: rgba(255,255,255,0.95);
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 15mm 0;
+  }
+  
+  .level-badge {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    padding: 12px 24px;
+    text-align: center;
+    margin: 10mm auto;
+    width: fit-content;
+  }
+  
+  .level-badge .label {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+  }
+  
+  .level-badge .value {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+  }
+  
+  .features {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin: 10mm 0;
+  }
+  
+  .features-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.9);
+  }
+  
+  .feature {
+    font-size: 11pt;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.95);
+  }
+  
+  .footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 15mm;
+    border-top: 2px solid rgba(255,255,255,0.3);
+  }
+  
+  .publisher {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 1pt;
+    margin-bottom: 4px;
+  }
+  
+  .edition {
+    font-size: 10pt;
+    color: rgba(255,255,255,0.8);
+  }
+  
+  .curriculum {
+    font-size: 9pt;
+    color: rgba(255,255,255,0.7);
+    margin-top: 8px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="content">
+    
+    <div class="header">
+      <div class="series">Beacon Educational Series</div>
+      <div class="title">Integrated Science</div>
+      <div class="subtitle">for Basic 8</div>
+    </div>
+    
+    <div class="icon-container">
+      
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="50" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="60" cy="60" r="8" fill="white"/>
+            <ellipse cx="60" cy="60" rx="45" ry="15" stroke="white" stroke-width="2" fill="none" transform="rotate(0 60 60)"/>
+            <ellipse cx="60" cy="60" rx="45" ry="15" stroke="white" stroke-width="2" fill="none" transform="rotate(60 60 60)"/>
+            <ellipse cx="60" cy="60" rx="45" ry="15" stroke="white" stroke-width="2" fill="none" transform="rotate(120 60 60)"/>
+        </svg>
+        
+    </div>
+    
+    <div class="level-badge">
+      <div class="label">Junior High School</div>
+      <div class="value">Basic 8 (JHS 2)</div>
+    </div>
+    
+    <div class="features">
+      <div class="features-title">Key Features</div>
+      <div class="feature">✓ 20+ BECE Mock Examinations</div>
+<div class="feature">✓ 22 Diagram Practice Papers</div>
+<div class="feature">✓ 800+ Multiple Choice Questions</div>
+<div class="feature">✓ Complete Answer Keys</div>
+<div class="feature">✓ Detailed Marking Schemes</div>
+    </div>
+    
+    <div class="footer">
+      <div class="publisher">Beacon Educational Consult</div>
+      <div class="edition">2026 Edition</div>
+      <div class="curriculum">Curriculum-Aligned • BECE Preparation</div>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>

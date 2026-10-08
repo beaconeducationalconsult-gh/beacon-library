@@ -1,0 +1,1073 @@
+{
+  "B7": {
+    "title": "Integrated Science Glossary — Basic 7",
+    "terms": [
+      {
+        "term": "Abiotic Factors",
+        "definition": "Non-living components of an ecosystem such as temperature, light, water, and soil."
+      },
+      {
+        "term": "Acid",
+        "definition": "A substance that produces hydrogen ions (H⁺) when dissolved in water. Has pH less than 7."
+      },
+      {
+        "term": "Adaptation",
+        "definition": "A characteristic or behavior that helps an organism survive in its environment."
+      },
+      {
+        "term": "Agriculture",
+        "definition": "The practice of farming, including cultivation of crops and rearing of animals."
+      },
+      {
+        "term": "Atom",
+        "definition": "The smallest unit of an element that retains the properties of that element."
+      },
+      {
+        "term": "Base",
+        "definition": "A substance that produces hydroxide ions (OH⁻) when dissolved in water. Has pH greater than 7."
+      },
+      {
+        "term": "Biotic Factors",
+        "definition": "Living components of an ecosystem such as plants, animals, and microorganisms."
+      },
+      {
+        "term": "Carbon Dioxide",
+        "definition": "A gas (CO₂) produced during respiration and used by plants in photosynthesis."
+      },
+      {
+        "term": "Cell",
+        "definition": "The basic structural and functional unit of all living organisms."
+      },
+      {
+        "term": "Chlorophyll",
+        "definition": "The green pigment in plants that absorbs light energy for photosynthesis."
+      },
+      {
+        "term": "Climate",
+        "definition": "The average weather conditions of a place over a long period (30+ years)."
+      },
+      {
+        "term": "Compound",
+        "definition": "A substance formed when two or more elements chemically combine in fixed proportions."
+      },
+      {
+        "term": "Conservation",
+        "definition": "The protection and careful management of natural resources."
+      },
+      {
+        "term": "Digestion",
+        "definition": "The process of breaking down large food molecules into smaller, soluble molecules."
+      },
+      {
+        "term": "Ecosystem",
+        "definition": "A community of living organisms interacting with each other and their non-living environment."
+      },
+      {
+        "term": "Electricity",
+        "definition": "The flow of electric charge (electrons) through a conductor."
+      },
+      {
+        "term": "Element",
+        "definition": "A pure substance that cannot be broken down into simpler substances by chemical means."
+      },
+      {
+        "term": "Energy",
+        "definition": "The ability to do work or cause change. Measured in joules (J)."
+      },
+      {
+        "term": "Environment",
+        "definition": "The surroundings or conditions in which an organism lives."
+      },
+      {
+        "term": "Erosion",
+        "definition": "The wearing away and removal of soil and rock by wind, water, or ice."
+      },
+      {
+        "term": "Evaporation",
+        "definition": "The process by which a liquid changes to a gas."
+      },
+      {
+        "term": "Fertilizer",
+        "definition": "A substance added to soil to increase its fertility and plant growth."
+      },
+      {
+        "term": "Force",
+        "definition": "A push or pull that can change the motion or shape of an object. Measured in newtons (N)."
+      },
+      {
+        "term": "Germination",
+        "definition": "The process by which a seed begins to grow into a new plant."
+      },
+      {
+        "term": "Habitat",
+        "definition": "The natural home or environment of an organism."
+      },
+      {
+        "term": "Hydroelectric",
+        "definition": "Relating to the generation of electricity using flowing water."
+      },
+      {
+        "term": "Irrigation",
+        "definition": "The artificial application of water to land to assist crop production."
+      },
+      {
+        "term": "Matter",
+        "definition": "Anything that has mass and occupies space."
+      },
+      {
+        "term": "Metamorphosis",
+        "definition": "A complete change in form or structure during the life cycle of an organism."
+      },
+      {
+        "term": "Mixture",
+        "definition": "A combination of two or more substances that are not chemically bonded."
+      },
+      {
+        "term": "Nutrient",
+        "definition": "A substance that provides nourishment essential for growth and maintenance of life."
+      },
+      {
+        "term": "Oxygen",
+        "definition": "A gas (O₂) essential for respiration in most living organisms."
+      },
+      {
+        "term": "Photosynthesis",
+        "definition": "The process by which plants make food using sunlight, water, and carbon dioxide."
+      },
+      {
+        "term": "Pollution",
+        "definition": "The introduction of harmful substances into the environment."
+      },
+      {
+        "term": "Recycling",
+        "definition": "The process of converting waste materials into new materials and objects."
+      },
+      {
+        "term": "Respiration",
+        "definition": "The process by which organisms release energy from food."
+      },
+      {
+        "term": "Soil",
+        "definition": "The upper layer of earth in which plants grow, consisting of rock particles, organic matter, water, and air."
+      },
+      {
+        "term": "Solar Energy",
+        "definition": "Energy from the sun that can be converted into electricity or heat."
+      },
+      {
+        "term": "Solution",
+        "definition": "A homogeneous mixture of two or more substances."
+      },
+      {
+        "term": "Temperature",
+        "definition": "A measure of the average kinetic energy of particles in a substance. Measured in degrees Celsius (°C) or Kelvin (K)."
+      },
+      {
+        "term": "Transpiration",
+        "definition": "The loss of water vapor from plant leaves."
+      },
+      {
+        "term": "Water Cycle",
+        "definition": "The continuous movement of water between the earth's surface and the atmosphere."
+      },
+      {
+        "term": "Weather",
+        "definition": "The day-to-day conditions of the atmosphere including temperature, humidity, wind, and precipitation."
+      },
+      {
+        "term": "Work",
+        "definition": "The transfer of energy when a force moves an object through a distance. Measured in joules (J)."
+      }
+    ]
+  },
+  "B8": {
+    "title": "Integrated Science Glossary — Basic 8",
+    "terms": [
+      {
+        "term": "Acceleration",
+        "definition": "The rate of change of velocity. Measured in meters per second squared (m/s²)."
+      },
+      {
+        "term": "Alloy",
+        "definition": "A mixture of two or more metals, or a metal and another element."
+      },
+      {
+        "term": "Ampere",
+        "definition": "The unit of electric current. One ampere equals one coulomb per second."
+      },
+      {
+        "term": "Antibody",
+        "definition": "A protein produced by the immune system to fight infection."
+      },
+      {
+        "term": "Atmosphere",
+        "definition": "The layer of gases surrounding the earth."
+      },
+      {
+        "term": "Bacteria",
+        "definition": "Single-celled microorganisms that can be beneficial or harmful."
+      },
+      {
+        "term": "Balanced Diet",
+        "definition": "A diet containing all essential nutrients in the right proportions."
+      },
+      {
+        "term": "Blood",
+        "definition": "The fluid that circulates in the body, carrying oxygen, nutrients, and waste products."
+      },
+      {
+        "term": "Boiling Point",
+        "definition": "The temperature at which a liquid changes to a gas. Water boils at 100°C at standard pressure."
+      },
+      {
+        "term": "Carbohydrate",
+        "definition": "An organic compound that provides energy to living organisms."
+      },
+      {
+        "term": "Catalyst",
+        "definition": "A substance that speeds up a chemical reaction without being consumed."
+      },
+      {
+        "term": "Circuit",
+        "definition": "A closed path through which electric current flows."
+      },
+      {
+        "term": "Conductor",
+        "definition": "A material that allows electricity or heat to flow through it easily."
+      },
+      {
+        "term": "Contamination",
+        "definition": "The presence of unwanted substances in a material or environment."
+      },
+      {
+        "term": "Corrosion",
+        "definition": "The gradual destruction of metals by chemical reaction with the environment."
+      },
+      {
+        "term": "Current",
+        "definition": "The flow of electric charge through a conductor. Measured in amperes (A)."
+      },
+      {
+        "term": "Density",
+        "definition": "Mass per unit volume. Measured in kilograms per cubic meter (kg/m³)."
+      },
+      {
+        "term": "Disease",
+        "definition": "A disorder of structure or function in a living organism."
+      },
+      {
+        "term": "Dissolving",
+        "definition": "The process by which a solute forms a solution with a solvent."
+      },
+      {
+        "term": "Echo",
+        "definition": "A reflected sound wave."
+      },
+      {
+        "term": "Electrolysis",
+        "definition": "The decomposition of a substance using electric current."
+      },
+      {
+        "term": "Electron",
+        "definition": "A negatively charged particle that orbits the nucleus of an atom."
+      },
+      {
+        "term": "Enzyme",
+        "definition": "A biological catalyst that speeds up chemical reactions in living organisms."
+      },
+      {
+        "term": "Evolution",
+        "definition": "The gradual change in species over many generations."
+      },
+      {
+        "term": "Fat",
+        "definition": "An organic compound that stores energy and insulates the body."
+      },
+      {
+        "term": "Food Chain",
+        "definition": "A sequence showing how energy flows from one organism to another."
+      },
+      {
+        "term": "Frequency",
+        "definition": "The number of vibrations per second. Measured in hertz (Hz)."
+      },
+      {
+        "term": "Fungus",
+        "definition": "A group of organisms including mushrooms, molds, and yeasts."
+      },
+      {
+        "term": "Global Warming",
+        "definition": "The long-term increase in Earth's average temperature."
+      },
+      {
+        "term": "Greenhouse Effect",
+        "definition": "The trapping of heat in the atmosphere by greenhouse gases."
+      },
+      {
+        "term": "Hemoglobin",
+        "definition": "The protein in red blood cells that carries oxygen."
+      },
+      {
+        "term": "Hereditary",
+        "definition": "Characteristics passed from parents to offspring through genes."
+      },
+      {
+        "term": "Immunity",
+        "definition": "The ability of the body to resist and fight disease."
+      },
+      {
+        "term": "Insulator",
+        "definition": "A material that does not allow electricity or heat to flow through it easily."
+      },
+      {
+        "term": "Ion",
+        "definition": "An atom or molecule with a positive or negative electric charge."
+      },
+      {
+        "term": "Light",
+        "definition": "Electromagnetic radiation that can be seen by the human eye."
+      },
+      {
+        "term": "Magnetic Field",
+        "definition": "The region around a magnet where magnetic forces can be detected."
+      },
+      {
+        "term": "Melting Point",
+        "definition": "The temperature at which a solid changes to a liquid. Ice melts at 0°C."
+      },
+      {
+        "term": "Metamorphism",
+        "definition": "The change in the structure of a rock due to heat and pressure."
+      },
+      {
+        "term": "Mineral",
+        "definition": "A naturally occurring inorganic solid with a specific chemical composition."
+      },
+      {
+        "term": "Molecule",
+        "definition": "The smallest unit of a compound that retains its chemical properties."
+      },
+      {
+        "term": "Newton",
+        "definition": "The unit of force. One newton accelerates one kilogram at one meter per second squared."
+      },
+      {
+        "term": "Nutrition",
+        "definition": "The process by which organisms obtain and use food for growth and maintenance."
+      },
+      {
+        "term": "Oxidation",
+        "definition": "A chemical reaction involving the loss of electrons or addition of oxygen."
+      },
+      {
+        "term": "Ozone",
+        "definition": "A molecule made of three oxygen atoms (O₃) that protects Earth from UV radiation."
+      },
+      {
+        "term": "Parasite",
+        "definition": "An organism that lives on or in another organism and benefits at the host's expense."
+      },
+      {
+        "term": "pH Scale",
+        "definition": "A scale from 0 to 14 that measures how acidic or basic a substance is."
+      },
+      {
+        "term": "Potential Energy",
+        "definition": "Energy stored in an object due to its position or state."
+      },
+      {
+        "term": "Power",
+        "definition": "The rate at which work is done. Measured in watts (W)."
+      },
+      {
+        "term": "Pressure",
+        "definition": "Force per unit area. Measured in pascals (Pa) or newtons per square meter (N/m²)."
+      },
+      {
+        "term": "Protein",
+        "definition": "An organic compound made of amino acids, essential for growth and repair."
+      },
+      {
+        "term": "Radiation",
+        "definition": "Energy transmitted in the form of waves or particles."
+      },
+      {
+        "term": "Reflection",
+        "definition": "The bouncing back of light, sound, or other waves from a surface."
+      },
+      {
+        "term": "Refraction",
+        "definition": "The bending of light as it passes from one medium to another."
+      },
+      {
+        "term": "Reproduction",
+        "definition": "The biological process by which organisms produce offspring."
+      },
+      {
+        "term": "Resistance",
+        "definition": "The opposition to the flow of electric current. Measured in ohms (Ω)."
+      },
+      {
+        "term": "Rock Cycle",
+        "definition": "The continuous process by which rocks change from one type to another."
+      },
+      {
+        "term": "Salt",
+        "definition": "An ionic compound formed when an acid reacts with a base."
+      },
+      {
+        "term": "Satellite",
+        "definition": "An object that orbits a planet or other celestial body."
+      },
+      {
+        "term": "Sound",
+        "definition": "A form of energy produced by vibrations and transmitted through a medium."
+      },
+      {
+        "term": "Speed",
+        "definition": "The distance traveled per unit time. Measured in meters per second (m/s)."
+      },
+      {
+        "term": "Static Electricity",
+        "definition": "Electric charge that builds up on the surface of an object."
+      },
+      {
+        "term": "Sublimation",
+        "definition": "The change from a solid directly to a gas without passing through the liquid state."
+      },
+      {
+        "term": "Sustainable",
+        "definition": "Meeting present needs without compromising the ability of future generations to meet their needs."
+      },
+      {
+        "term": "Temperature",
+        "definition": "A measure of the average kinetic energy of particles. Measured in °C or K."
+      },
+      {
+        "term": "Thermal Energy",
+        "definition": "The total kinetic energy of particles in a substance."
+      },
+      {
+        "term": "Thermometer",
+        "definition": "An instrument used to measure temperature."
+      },
+      {
+        "term": "Tissue",
+        "definition": "A group of similar cells that work together to perform a specific function."
+      },
+      {
+        "term": "Transformer",
+        "definition": "A device that changes the voltage of alternating current."
+      },
+      {
+        "term": "Transpiration",
+        "definition": "The loss of water vapor from plant leaves."
+      },
+      {
+        "term": "Ultrasound",
+        "definition": "Sound waves with frequencies above the human hearing range (above 20,000 Hz)."
+      },
+      {
+        "term": "Vaccine",
+        "definition": "A substance that stimulates the immune system to produce immunity to a disease."
+      },
+      {
+        "term": "Velocity",
+        "definition": "Speed in a specific direction. Measured in meters per second (m/s)."
+      },
+      {
+        "term": "Virus",
+        "definition": "A microscopic infectious agent that can only replicate inside living cells."
+      },
+      {
+        "term": "Vitamin",
+        "definition": "An organic compound required in small amounts for normal body function."
+      },
+      {
+        "term": "Voltage",
+        "definition": "The electrical potential difference between two points. Measured in volts (V)."
+      },
+      {
+        "term": "Wavelength",
+        "definition": "The distance between successive crests of a wave. Measured in meters (m)."
+      },
+      {
+        "term": "Weight",
+        "definition": "The force of gravity acting on an object. Measured in newtons (N)."
+      }
+    ]
+  },
+  "B9": {
+    "title": "Integrated Science Glossary — Basic 9",
+    "terms": [
+      {
+        "term": "Absorption",
+        "definition": "The process by which substances are taken into cells or tissues."
+      },
+      {
+        "term": "Acid Rain",
+        "definition": "Rain with a pH below 5.6, caused by pollution from burning fossil fuels."
+      },
+      {
+        "term": "Activation Energy",
+        "definition": "The minimum energy required to start a chemical reaction."
+      },
+      {
+        "term": "Amplitude",
+        "definition": "The maximum displacement of a wave from its rest position."
+      },
+      {
+        "term": "Antibiotic",
+        "definition": "A substance that kills or inhibits the growth of bacteria."
+      },
+      {
+        "term": "Atom",
+        "definition": "The smallest unit of an element that retains its chemical properties."
+      },
+      {
+        "term": "Atomic Mass",
+        "definition": "The mass of an atom, measured in atomic mass units (amu)."
+      },
+      {
+        "term": "Atomic Number",
+        "definition": "The number of protons in the nucleus of an atom."
+      },
+      {
+        "term": "Barometer",
+        "definition": "An instrument used to measure atmospheric pressure."
+      },
+      {
+        "term": "Biomass",
+        "definition": "Organic material from plants and animals used as fuel."
+      },
+      {
+        "term": "Biotechnology",
+        "definition": "The use of living organisms or their products to make or modify useful products."
+      },
+      {
+        "term": "Capacitor",
+        "definition": "A device that stores electric charge."
+      },
+      {
+        "term": "Carbon Cycle",
+        "definition": "The circulation of carbon through the atmosphere, oceans, and living organisms."
+      },
+      {
+        "term": "Cell Division",
+        "definition": "The process by which a cell divides to form two or more cells."
+      },
+      {
+        "term": "Chemical Bond",
+        "definition": "The force that holds atoms together in a compound."
+      },
+      {
+        "term": "Chemical Change",
+        "definition": "A change that produces new substances with different properties."
+      },
+      {
+        "term": "Climate Change",
+        "definition": "Long-term changes in global or regional climate patterns."
+      },
+      {
+        "term": "Combustion",
+        "definition": "A chemical reaction between a fuel and oxygen that releases energy."
+      },
+      {
+        "term": "Conservation of Energy",
+        "definition": "The principle that energy cannot be created or destroyed, only transformed."
+      },
+      {
+        "term": "Conservation of Mass",
+        "definition": "The principle that mass is neither created nor destroyed in a chemical reaction."
+      },
+      {
+        "term": "Constant",
+        "definition": "A quantity that does not change in an experiment."
+      },
+      {
+        "term": "Control",
+        "definition": "A standard of comparison in an experiment."
+      },
+      {
+        "term": "Covalent Bond",
+        "definition": "A chemical bond formed by sharing electrons between atoms."
+      },
+      {
+        "term": "Decomposition",
+        "definition": "The breakdown of a complex substance into simpler substances."
+      },
+      {
+        "term": "Deforestation",
+        "definition": "The clearing of forests for other uses such as agriculture or development."
+      },
+      {
+        "term": "Diode",
+        "definition": "An electronic component that allows current to flow in only one direction."
+      },
+      {
+        "term": "DNA",
+        "definition": "Deoxyribonucleic acid, the molecule that carries genetic information."
+      },
+      {
+        "term": "Doppler Effect",
+        "definition": "The change in frequency of a wave as the source and observer move relative to each other."
+      },
+      {
+        "term": "Ecology",
+        "definition": "The study of interactions between organisms and their environment."
+      },
+      {
+        "term": "Electromagnetic Induction",
+        "definition": "The production of electricity by moving a conductor through a magnetic field."
+      },
+      {
+        "term": "Electromagnet",
+        "definition": "A magnet created by passing electric current through a coil of wire."
+      },
+      {
+        "term": "Electroplating",
+        "definition": "The process of coating an object with a thin layer of metal using electricity."
+      },
+      {
+        "term": "Emission",
+        "definition": "The release of substances into the atmosphere."
+      },
+      {
+        "term": "Endothermic",
+        "definition": "A chemical reaction that absorbs energy from its surroundings."
+      },
+      {
+        "term": "Energy Efficiency",
+        "definition": "The ratio of useful energy output to total energy input."
+      },
+      {
+        "term": "Environmental Impact",
+        "definition": "The effect that human activities have on the environment."
+      },
+      {
+        "term": "Equilibrium",
+        "definition": "A state of balance where opposing forces or processes are equal."
+      },
+      {
+        "term": "Exothermic",
+        "definition": "A chemical reaction that releases energy to its surroundings."
+      },
+      {
+        "term": "Fertilization",
+        "definition": "The fusion of male and female gametes to form a zygote."
+      },
+      {
+        "term": "Fossil Fuel",
+        "definition": "Fuel formed from the remains of ancient plants and animals."
+      },
+      {
+        "term": "Galvanometer",
+        "definition": "An instrument used to detect and measure small electric currents."
+      },
+      {
+        "term": "Gene",
+        "definition": "A unit of heredity that determines a specific characteristic."
+      },
+      {
+        "term": "Genetic Engineering",
+        "definition": "The direct manipulation of an organism's genes using biotechnology."
+      },
+      {
+        "term": "Geothermal Energy",
+        "definition": "Energy from heat within the Earth."
+      },
+      {
+        "term": "Greenhouse Gas",
+        "definition": "A gas that traps heat in the atmosphere, such as CO₂, CH₄, or N₂O."
+      },
+      {
+        "term": "Half-life",
+        "definition": "The time taken for half the atoms in a radioactive sample to decay."
+      },
+      {
+        "term": "Heredity",
+        "definition": "The transmission of characteristics from parents to offspring."
+      },
+      {
+        "term": "Hormone",
+        "definition": "A chemical messenger produced by glands and transported in the blood."
+      },
+      {
+        "term": "Hydrocarbon",
+        "definition": "A compound containing only hydrogen and carbon atoms."
+      },
+      {
+        "term": "Hydroelectric Power",
+        "definition": "Electricity generated using the energy of falling or flowing water."
+      },
+      {
+        "term": "Hypothesis",
+        "definition": "A testable explanation for an observation or phenomenon."
+      },
+      {
+        "term": "Indicator",
+        "definition": "A substance that changes color to show whether a solution is acidic or basic."
+      },
+      {
+        "term": "Inertia",
+        "definition": "The tendency of an object to resist changes in its state of motion."
+      },
+      {
+        "term": "Infrared",
+        "definition": "Electromagnetic radiation with wavelengths longer than visible light."
+      },
+      {
+        "term": "Innovation",
+        "definition": "The introduction of new ideas, methods, or products."
+      },
+      {
+        "term": "Ion",
+        "definition": "An atom or molecule with a net electric charge."
+      },
+      {
+        "term": "Ionic Bond",
+        "definition": "A chemical bond formed by the transfer of electrons between atoms."
+      },
+      {
+        "term": "Isotope",
+        "definition": "Atoms of the same element with different numbers of neutrons."
+      },
+      {
+        "term": "Joule",
+        "definition": "The unit of energy. One joule equals one newton-meter."
+      },
+      {
+        "term": "Junction",
+        "definition": "A point where two or more conductors meet in an electrical circuit."
+      },
+      {
+        "term": "Kinetic Energy",
+        "definition": "The energy an object possesses due to its motion."
+      },
+      {
+        "term": "Laser",
+        "definition": "Light Amplification by Stimulated Emission of Radiation."
+      },
+      {
+        "term": "Latitude",
+        "definition": "The angular distance north or south of the equator."
+      },
+      {
+        "term": "Lens",
+        "definition": "A transparent object that refracts light to form an image."
+      },
+      {
+        "term": "Longitude",
+        "definition": "The angular distance east or west of the prime meridian."
+      },
+      {
+        "term": "Magnetic Pole",
+        "definition": "The region at each end of a magnet where the magnetic force is strongest."
+      },
+      {
+        "term": "Magnification",
+        "definition": "The ratio of the size of an image to the size of the object."
+      },
+      {
+        "term": "Mass Number",
+        "definition": "The total number of protons and neutrons in an atom's nucleus."
+      },
+      {
+        "term": "Meiosis",
+        "definition": "Cell division that produces gametes with half the normal number of chromosomes."
+      },
+      {
+        "term": "Metamorphic Rock",
+        "definition": "Rock that has been changed by heat and pressure."
+      },
+      {
+        "term": "Mitosis",
+        "definition": "Cell division that produces two identical daughter cells."
+      },
+      {
+        "term": "Momentum",
+        "definition": "The product of an object's mass and velocity."
+      },
+      {
+        "term": "Mutation",
+        "definition": "A change in the DNA sequence of a gene or chromosome."
+      },
+      {
+        "term": "Natural Selection",
+        "definition": "The process by which organisms better adapted to their environment tend to survive and reproduce."
+      },
+      {
+        "term": "Neutralization",
+        "definition": "The reaction between an acid and a base to form a salt and water."
+      },
+      {
+        "term": "Neutron",
+        "definition": "An uncharged particle in the nucleus of an atom."
+      },
+      {
+        "term": "Newton's First Law",
+        "definition": "An object at rest stays at rest, and an object in motion stays in motion, unless acted on by a force."
+      },
+      {
+        "term": "Newton's Second Law",
+        "definition": "Force equals mass times acceleration (F = ma)."
+      },
+      {
+        "term": "Newton's Third Law",
+        "definition": "For every action, there is an equal and opposite reaction."
+      },
+      {
+        "term": "Nuclear Energy",
+        "definition": "Energy released by nuclear reactions such as fission or fusion."
+      },
+      {
+        "term": "Nucleus",
+        "definition": "The central part of an atom containing protons and neutrons."
+      },
+      {
+        "term": "Ohm's Law",
+        "definition": "The current through a conductor is directly proportional to the voltage (V = IR)."
+      },
+      {
+        "term": "Organ",
+        "definition": "A group of tissues that work together to perform a specific function."
+      },
+      {
+        "term": "Organic Compound",
+        "definition": "A compound containing carbon, usually bonded to hydrogen."
+      },
+      {
+        "term": "Osmosis",
+        "definition": "The movement of water molecules through a selectively permeable membrane."
+      },
+      {
+        "term": "Oxidation-Reduction",
+        "definition": "A chemical reaction involving the transfer of electrons."
+      },
+      {
+        "term": "Parallel Circuit",
+        "definition": "A circuit in which components are connected across the same voltage."
+      },
+      {
+        "term": "Period",
+        "definition": "The time for one complete cycle of a wave or oscillation."
+      },
+      {
+        "term": "Periodic Table",
+        "definition": "A table of elements arranged by atomic number and chemical properties."
+      },
+      {
+        "term": "pH",
+        "definition": "A measure of the acidity or basicity of a solution, from 0 to 14."
+      },
+      {
+        "term": "Phenotype",
+        "definition": "The observable characteristics of an organism."
+      },
+      {
+        "term": "Photosynthesis",
+        "definition": "The process by which plants convert light energy into chemical energy."
+      },
+      {
+        "term": "Physical Change",
+        "definition": "A change in form or appearance without changing chemical composition."
+      },
+      {
+        "term": "Plasma",
+        "definition": "The liquid component of blood in which cells are suspended."
+      },
+      {
+        "term": "Plate Tectonics",
+        "definition": "The theory that Earth's outer shell is divided into plates that move over the mantle."
+      },
+      {
+        "term": "Pollutant",
+        "definition": "A substance that contaminates the environment."
+      },
+      {
+        "term": "Polypeptide",
+        "definition": "A chain of amino acids that forms a protein."
+      },
+      {
+        "term": "Potential Energy",
+        "definition": "Energy stored due to an object's position or state."
+      },
+      {
+        "term": "Power",
+        "definition": "The rate at which work is done or energy is transferred."
+      },
+      {
+        "term": "Precipitation",
+        "definition": "Water falling from clouds as rain, snow, sleet, or hail."
+      },
+      {
+        "term": "Predator",
+        "definition": "An animal that hunts and eats other animals."
+      },
+      {
+        "term": "Pressure",
+        "definition": "Force per unit area, measured in pascals (Pa)."
+      },
+      {
+        "term": "Prey",
+        "definition": "An animal that is hunted and eaten by another animal."
+      },
+      {
+        "term": "Prism",
+        "definition": "A transparent object that separates white light into its component colors."
+      },
+      {
+        "term": "Proton",
+        "definition": "A positively charged particle in the nucleus of an atom."
+      },
+      {
+        "term": "Radioactivity",
+        "definition": "The spontaneous emission of radiation from unstable atomic nuclei."
+      },
+      {
+        "term": "Recycling",
+        "definition": "The process of converting waste into reusable material."
+      },
+      {
+        "term": "Reduction",
+        "definition": "A chemical reaction involving the gain of electrons."
+      },
+      {
+        "term": "Reflection",
+        "definition": "The bouncing back of light or other waves from a surface."
+      },
+      {
+        "term": "Refraction",
+        "definition": "The bending of light as it passes from one medium to another."
+      },
+      {
+        "term": "Renewable Energy",
+        "definition": "Energy from sources that are naturally replenished."
+      },
+      {
+        "term": "Reproduction",
+        "definition": "The biological process by which organisms produce offspring."
+      },
+      {
+        "term": "Resistance",
+        "definition": "The opposition to the flow of electric current."
+      },
+      {
+        "term": "Resistor",
+        "definition": "A component that resists the flow of electric current."
+      },
+      {
+        "term": "Resonance",
+        "definition": "The amplification of vibrations when the frequency matches the natural frequency."
+      },
+      {
+        "term": "Satellite",
+        "definition": "An object that orbits a planet or other celestial body."
+      },
+      {
+        "term": "Scientific Method",
+        "definition": "A systematic approach to investigating phenomena and acquiring knowledge."
+      },
+      {
+        "term": "Semiconductor",
+        "definition": "A material with electrical conductivity between that of a conductor and an insulator."
+      },
+      {
+        "term": "Series Circuit",
+        "definition": "A circuit in which components are connected end-to-end."
+      },
+      {
+        "term": "Solar Cell",
+        "definition": "A device that converts sunlight directly into electricity."
+      },
+      {
+        "term": "Solar System",
+        "definition": "The sun and all the objects that orbit it, including planets, moons, and asteroids."
+      },
+      {
+        "term": "Solute",
+        "definition": "The substance dissolved in a solution."
+      },
+      {
+        "term": "Solvent",
+        "definition": "The substance that dissolves the solute in a solution."
+      },
+      {
+        "term": "Spectrum",
+        "definition": "The range of colors produced when light is dispersed."
+      },
+      {
+        "term": "Speed of Light",
+        "definition": "The speed at which light travels in a vacuum, approximately 300,000 km/s."
+      },
+      {
+        "term": "Stem Cell",
+        "definition": "An undifferentiated cell that can develop into specialized cell types."
+      },
+      {
+        "term": "Sustainable Development",
+        "definition": "Development that meets present needs without compromising future generations."
+      },
+      {
+        "term": "Symbiosis",
+        "definition": "A close relationship between two different species."
+      },
+      {
+        "term": "Technology",
+        "definition": "The application of scientific knowledge for practical purposes."
+      },
+      {
+        "term": "Thermal Equilibrium",
+        "definition": "The state when two objects in contact reach the same temperature."
+      },
+      {
+        "term": "Thermodynamics",
+        "definition": "The study of heat and its relationship to energy and work."
+      },
+      {
+        "term": "Tidal Energy",
+        "definition": "Energy generated from the movement of ocean tides."
+      },
+      {
+        "term": "Transformer",
+        "definition": "A device that changes the voltage of alternating current."
+      },
+      {
+        "term": "Transistor",
+        "definition": "A semiconductor device used to amplify or switch electronic signals."
+      },
+      {
+        "term": "Ultraviolet",
+        "definition": "Electromagnetic radiation with wavelengths shorter than visible light."
+      },
+      {
+        "term": "Variable",
+        "definition": "A factor that can change in an experiment."
+      },
+      {
+        "term": "Velocity",
+        "definition": "Speed in a specific direction."
+      },
+      {
+        "term": "Voltage",
+        "definition": "The electrical potential difference between two points."
+      },
+      {
+        "term": "Watt",
+        "definition": "The unit of power. One watt equals one joule per second."
+      },
+      {
+        "term": "Wave",
+        "definition": "A disturbance that transfers energy through a medium or space."
+      },
+      {
+        "term": "Wind Energy",
+        "definition": "Energy generated from the movement of air."
+      },
+      {
+        "term": "Work",
+        "definition": "The transfer of energy when a force moves an object."
+      }
+    ]
+  }
+}

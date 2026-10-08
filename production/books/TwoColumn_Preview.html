@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Two-Column MCQ Layout Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #d0d0d0;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.35;
+    color: #1a1a1a;
+  }
+  
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 25px auto;
+    background: white;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    padding: 20mm 20mm 20mm 25mm;
+    position: relative;
+    page-break-after: always;
+  }
+  
+  .header {
+    position: absolute;
+    top: 10mm;
+    left: 25mm;
+    right: 20mm;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #888;
+    letter-spacing: 0.3pt;
+    border-bottom: 0.4pt solid #ccc;
+    padding-bottom: 3mm;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 10mm;
+    right: 20mm;
+    font-size: 9pt;
+    color: #666;
+  }
+  
+  .paper-title {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3mm;
+  }
+  
+  .paper-meta {
+    text-align: center;
+    color: #666;
+    font-size: 10pt;
+    margin-bottom: 5mm;
+  }
+  
+  .divider { border-top: 0.4pt solid #ccc; margin: 4mm 0; }
+  
+  .section-header {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    text-align: center;
+    margin: 6mm 0 3mm 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+  
+  .instruction {
+    text-align: center;
+    font-size: 9.5pt;
+    color: #555;
+    margin-bottom: 5mm;
+    font-style: italic;
+  }
+  
+  /* TWO-COLUMN LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8mm;
+  }
+  
+  .question {
+    margin-bottom: 3.5mm;
+  }
+  
+  .q-text {
+    padding-left: 8mm;
+    text-indent: -8mm;
+    margin-bottom: 1mm;
+  }
+  
+  .q-number {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  
+  .options {
+    margin-left: 14mm;
+  }
+  
+  .option {
+    margin-bottom: 0.5mm;
+    font-size: 9.5pt;
+  }
+  
+  .preview-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  
+  .preview-banner small {
+    display: block;
+    font-size: 9pt;
+    font-weight: 400;
+    color: #c8e6c9;
+    margin-top: 2px;
+  }
+  
+  .page-label {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 9pt;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-weight: 600;
+  }
+  
+  .comparison-box {
+    max-width: 210mm;
+    margin: 25px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  .comparison-box h2 {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 18pt;
+    margin-bottom: 15px;
+    color: #1b5e20;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .stat-card {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .stat-card.highlight {
+    background: #e8f5e9;
+    border: 2px solid #4caf50;
+  }
+  
+  .stat-num {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 28pt;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .stat-card.highlight .stat-num { color: #1b5e20; }
+  
+  .stat-label {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    color: #888;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  TWO-COLUMN MCQ LAYOUT — 48.6% FEWER PAGES
+  <small>Same content, half the pages — significant printing cost savings</small>
+</div>
+
+<!-- Comparison Stats -->
+<div class="comparison-box" style="margin-top: 60px;">
+  <h2>📊 Layout Comparison: Integrated Science B7</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">284</div>
+      <div class="stat-label">Pages (Single Column)</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-num">146</div>
+      <div class="stat-label">Pages (Two Column) ✅</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">622 KB</div>
+      <div class="stat-label">File Size (Single)</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-num">339 KB</div>
+      <div class="stat-label">File Size (Two Col) ✅</div>
+    </div>
+  </div>
+  <p style="text-align: center; font-size: 11pt; color: #1b5e20; font-weight: 600; margin-top: 10px;">
+    138 pages saved — 48.6% reduction — ~GH₵ 15-20 saved per printed copy
+  </p>
+</div>
+
+<!-- Page 1: Two-Column MCQs (Questions 1-20) -->
+<div class="page">
+  <div class="page-label">Two-Column Layout — Questions 1–20 fit on ONE page</div>
+  <div class="header">
+    <span>Integrated Science for Basic 7</span>
+    <span>Paper 1: Agricultural Tools and Machinery</span>
+  </div>
+  
+  <div class="paper-title">Paper 1: Agricultural Tools and Machinery</div>
+  <div class="paper-meta">Time Allowed: 2 hours &nbsp;|&nbsp; Total Marks: 100</div>
+  <div class="divider"></div>
+  
+  <div class="section-header">Section A: Objective Test</div>
+  <div class="instruction">Answer <strong>ALL</strong> questions. Each question carries 1 mark.</div>
+  
+  <div class="two-col">
+    <!-- Left Column -->
+    <div>
+      <div class="question">
+        <div class="q-text"><span class="q-number">1.</span> A simple agricultural tool is one that is</div>
+        <div class="options">
+          <div class="option">A. made entirely of plastic</div>
+          <div class="option">B. driven by a diesel engine</div>
+          <div class="option">C. operated by hand and needs no engine</div>
+          <div class="option">D. used only on very large farms</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">2.</span> The tool used mainly for clearing weeds and cutting down bushes is the</div>
+        <div class="options">
+          <div class="option">A. rake</div>
+          <div class="option">B. garden trowel</div>
+          <div class="option">C. watering can</div>
+          <div class="option">D. cutlass</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">3.</span> The farm tool used for making ridges, mounds and weeding is the</div>
+        <div class="options">
+          <div class="option">A. wheelbarrow</div>
+          <div class="option">B. hoe</div>
+          <div class="option">C. secateurs</div>
+          <div class="option">D. measuring tape</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">4.</span> Seedlings in a nursery are watered gently with a</div>
+        <div class="options">
+          <div class="option">A. watering can</div>
+          <div class="option">B. spraying machine</div>
+          <div class="option">C. shovel</div>
+          <div class="option">D. bucket of ice</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">5.</span> The tool used for gathering dry leaves and levelling a seedbed is the</div>
+        <div class="options">
+          <div class="option">A. knapsack sprayer</div>
+          <div class="option">B. rake</div>
+          <div class="option">C. axe</div>
+          <div class="option">D. cutlass</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">6.</span> A tool used for digging holes for planting tree seedlings is the</div>
+        <div class="options">
+          <div class="option">A. rake</div>
+          <div class="option">B. pruning saw</div>
+          <div class="option">C. watering can</div>
+          <div class="option">D. pickaxe or mattock</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">7.</span> Secateurs are used on a farm mainly for</div>
+        <div class="options">
+          <div class="option">A. pruning or cutting small branches</div>
+          <div class="option">B. carrying farm produce</div>
+          <div class="option">C. watering young plants</div>
+          <div class="option">D. ploughing the land</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">8.</span> Which tool is used on an ANIMAL farm?</div>
+        <div class="options">
+          <div class="option">A. A garden rake</div>
+          <div class="option">B. A seed drill</div>
+          <div class="option">C. A feeding trough brush</div>
+          <div class="option">D. A pair of secateurs</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">9.</span> A wheelbarrow is used mainly for</div>
+        <div class="options">
+          <div class="option">A. spraying insecticide</div>
+          <div class="option">B. carrying manure and crops</div>
+          <div class="option">C. cutting grass</div>
+          <div class="option">D. measuring land</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">10.</span> Which protects the hands while working with farm tools?</div>
+        <div class="options">
+          <div class="option">A. A watering can</div>
+          <div class="option">B. Hand gloves</div>
+          <div class="option">C. A cutlass sheath</div>
+          <div class="option">D. A head pan</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column -->
+    <div>
+      <div class="question">
+        <div class="q-text"><span class="q-number">11.</span> The handling of an agricultural tool means the way the tool is</div>
+        <div class="options">
+          <div class="option">A. manufactured in a factory</div>
+          <div class="option">B. priced in the market</div>
+          <div class="option">C. used and controlled safely</div>
+          <div class="option">D. coloured by the maker</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">12.</span> After using a hoe, a farmer should always</div>
+        <div class="options">
+          <div class="option">A. leave it in the rain</div>
+          <div class="option">B. throw it away</div>
+          <div class="option">C. clean it and store it properly</div>
+          <div class="option">D. bury it in the soil</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">13.</span> The tool used for harvesting rice and grass is the</div>
+        <div class="options">
+          <div class="option">A. axe</div>
+          <div class="option">B. spade</div>
+          <div class="option">C. sickle</div>
+          <div class="option">D. hoe</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">14.</span> Which tool is best for breaking hard, compacted soil?</div>
+        <div class="options">
+          <div class="option">A. A watering can</div>
+          <div class="option">B. A rake</div>
+          <div class="option">C. A garden fork</div>
+          <div class="option">D. A pickaxe</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">15.</span> Farm tools should be stored in a dry place to prevent</div>
+        <div class="options">
+          <div class="option">A. rusting and decay</div>
+          <div class="option">B. the tools from growing</div>
+          <div class="option">C. the tools from multiplying</div>
+          <div class="option">D. too much sunlight</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">16.</span> Oiling the metal parts of a cutlass helps to</div>
+        <div class="options">
+          <div class="option">A. make it heavier</div>
+          <div class="option">B. make it more expensive</div>
+          <div class="option">C. prevent rusting</div>
+          <div class="option">D. change its colour</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">17.</span> Which of the following is a mechanical agricultural tool?</div>
+        <div class="options">
+          <div class="option">A. Hand trowel</div>
+          <div class="option">B. Tractor-drawn plough</div>
+          <div class="option">C. Cutlass</div>
+          <div class="option">D. Garden fork</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">18.</span> A basic safety rule when using farm tools is to</div>
+        <div class="options">
+          <div class="option">A. run while carrying sharp tools</div>
+          <div class="option">B. use the right tool for the right job</div>
+          <div class="option">C. leave tools on the ground</div>
+          <div class="option">D. play with tools during breaks</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">19.</span> Sharpening a cutlass regularly makes it</div>
+        <div class="options">
+          <div class="option">A. more efficient and safer to use</div>
+          <div class="option">B. heavier and harder to carry</div>
+          <div class="option">C. less useful on the farm</div>
+          <div class="option">D. more likely to break</div>
+        </div>
+      </div>
+      
+      <div class="question">
+        <div class="q-text"><span class="q-number">20.</span> The tool best suited for transplanting seedlings is the</div>
+        <div class="options">
+          <div class="option">A. garden trowel</div>
+          <div class="option">B. hoe</div>
+          <div class="option">C. rake</div>
+          <div class="option">D. axe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">1</div>
+</div>
+
+<!-- Summary -->
+<div class="comparison-box">
+  <h2>✅ Benefits of Two-Column Layout</h2>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <tr style="background: #f5f5f5;">
+      <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ddd; font-family: 'Source Sans Pro', sans-serif;">Benefit</th>
+      <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ddd; font-family: 'Source Sans Pro', sans-serif;">Impact</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">📄 <strong>Fewer pages</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">48.6% reduction (284 → 146 pages for B7 Science)</td>
+    </tr>
+    <tr style="background: #fafafa;">
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">💰 <strong>Lower printing costs</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">~GH₵ 15-20 saved per copy (fewer pages = less paper and ink)</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">📦 <strong>Lighter books</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">Easier for students to carry to school</td>
+    </tr>
+    <tr style="background: #fafafa;">
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">👁️ <strong>Readable</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">MCQs are short — perfect for two-column layout. Theory stays single-column.</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">📐 <strong>Professional</strong></td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee;">Matches BECE exam paper format and standard textbook conventions</td>
+    </tr>
+    <tr style="background: #fafafa;">
+      <td style="padding: 10px;">🌍 <strong>Less paper waste</strong></td>
+      <td style="padding: 10px;">More environmentally friendly — nearly half the paper used</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

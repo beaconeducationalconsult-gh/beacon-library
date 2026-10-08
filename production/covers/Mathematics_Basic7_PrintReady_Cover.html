@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematics Basic 7 - Print-Ready Cover</title>
+    <style>
+        @page {
+            size: 440.0mm 303mm;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 440.0mm;
+            height: 303mm;
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+        .bleed-left, .bleed-right {
+            width: 3mm;
+            height: 303mm;
+            background: #c62828;
+        }
+        .back-cover {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .spine {
+            width: 14.0mm;
+            height: 297mm;
+            background: #c62828;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        .front-cover {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, #c62828 0%, #c62828dd 100%);
+            color: white;
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .back-title {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+        .back-subtitle {
+            font-size: 14pt;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .back-blurb {
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-features {
+            font-size: 11pt;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-publisher {
+            font-size: 10pt;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .barcode-space {
+            border: 2px dashed #999;
+            padding: 10px;
+            text-align: center;
+            font-size: 9pt;
+            color: #999;
+            margin-top: 15px;
+        }
+        .spine-text {
+            font-size: 12pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .front-title {
+            font-size: 32pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .front-subtitle {
+            font-size: 18pt;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .front-icon {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .front-badge {
+            background: white;
+            color: #c62828;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .front-publisher {
+            font-size: 11pt;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bleed Left -->
+    <div class="bleed-left"></div>
+    
+    <!-- Back Cover -->
+    <div class="back-cover">
+        <div>
+            <div class="back-title">Mathematics</div>
+            <div class="back-subtitle">Basic 7 — Complete BECE Preparation</div>
+            <div class="back-blurb">Complete mathematics preparation for Basic 7 students. This textbook contains 17 chapter examinations with 680 multiple choice questions and complete answer keys with cognitive level tags. Aligned with the Ghana Education Service Standards-Based Curriculum (2019).</div>
+            <div class="back-features">
+                <strong>Key Features:</strong><br>
+                <div style="margin: 5px 0;">✓ 17 Chapter Examinations</div>
+<div style="margin: 5px 0;">✓ 680 MCQs with Answers</div>
+<div style="margin: 5px 0;">✓ Cognitive Level Tags</div>
+<div style="margin: 5px 0;">✓ Curriculum-Aligned</div>
+<div style="margin: 5px 0;">✓ Professional Layout</div>
+            </div>
+        </div>
+        <div>
+            <div class="back-publisher">
+                <strong>Beacon Educational Consult</strong><br>
+                Accra, Ghana<br>
+                2026 Edition
+            </div>
+            <div class="barcode-space">
+                ISBN BARCODE AREA<br>
+                (To be added after ISBN registration)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Spine -->
+    <div class="spine">
+        <div class="spine-text">Mathematics — Basic 7</div>
+    </div>
+    
+    <!-- Front Cover -->
+    <div class="front-cover">
+        <div>
+            <div class="front-badge">Junior High School</div>
+            <div class="front-title">Mathematics</div>
+            <div class="front-subtitle">Basic 7</div>
+            <div class="front-icon">
+        <svg viewBox="0 0 100 100" style="width: 80px; height: 80px;">
+            <text x="50" y="40" font-size="30" fill="#c62828" text-anchor="middle" font-weight="bold">∑</text>
+            <text x="30" y="70" font-size="20" fill="#c62828" text-anchor="middle">π</text>
+            <text x="70" y="70" font-size="20" fill="#c62828" text-anchor="middle">∞</text>
+        </svg>
+        </div>
+            <div style="font-size: 14pt; opacity: 0.9;">Complete BECE Preparation<br>Examination Papers & Marking Schemes</div>
+        </div>
+        <div class="front-publisher">
+            <strong>Beacon Educational Consult</strong><br>
+            2026 Edition
+        </div>
+    </div>
+    
+    <!-- Bleed Right -->
+    <div class="bleed-right"></div>
+</body>
+</html>

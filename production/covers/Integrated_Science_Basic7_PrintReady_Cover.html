@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Integrated Science Basic 7 - Print-Ready Cover</title>
+    <style>
+        @page {
+            size: 463.2mm 303mm;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 463.2mm;
+            height: 303mm;
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+        .bleed-left, .bleed-right {
+            width: 3mm;
+            height: 303mm;
+            background: #1565c0;
+        }
+        .back-cover {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .spine {
+            width: 37.2mm;
+            height: 297mm;
+            background: #1565c0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        .front-cover {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, #1565c0 0%, #1565c0dd 100%);
+            color: white;
+            padding: 15mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .back-title {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        .back-subtitle {
+            font-size: 14pt;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .back-blurb {
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-features {
+            font-size: 11pt;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-publisher {
+            font-size: 10pt;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .barcode-space {
+            border: 2px dashed #999;
+            padding: 10px;
+            text-align: center;
+            font-size: 9pt;
+            color: #999;
+            margin-top: 15px;
+        }
+        .spine-text {
+            font-size: 12pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .front-title {
+            font-size: 32pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .front-subtitle {
+            font-size: 18pt;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .front-icon {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .front-badge {
+            background: white;
+            color: #1565c0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .front-publisher {
+            font-size: 11pt;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bleed Left -->
+    <div class="bleed-left"></div>
+    
+    <!-- Back Cover -->
+    <div class="back-cover">
+        <div>
+            <div class="back-title">Integrated Science</div>
+            <div class="back-subtitle">Basic 7 — Complete BECE Preparation</div>
+            <div class="back-blurb">Comprehensive BECE preparation for Basic 7 students. This complete textbook contains 42 examination papers with 800 multiple choice questions, 478 theory questions, 272 scientific diagrams, and complete answer keys with curriculum mapping. Aligned with the Ghana Education Service Standards-Based Curriculum (2019).</div>
+            <div class="back-features">
+                <strong>Key Features:</strong><br>
+                <div style="margin: 5px 0;">✓ 42 BECE Practice Papers</div>
+<div style="margin: 5px 0;">✓ 800 MCQs with Answers</div>
+<div style="margin: 5px 0;">✓ 272 Scientific Diagrams</div>
+<div style="margin: 5px 0;">✓ Diagram Mode Practice</div>
+<div style="margin: 5px 0;">✓ Curriculum-Aligned</div>
+            </div>
+        </div>
+        <div>
+            <div class="back-publisher">
+                <strong>Beacon Educational Consult</strong><br>
+                Accra, Ghana<br>
+                2026 Edition
+            </div>
+            <div class="barcode-space">
+                ISBN BARCODE AREA<br>
+                (To be added after ISBN registration)
+            </div>
+        </div>
+    </div>
+    
+    <!-- Spine -->
+    <div class="spine">
+        <div class="spine-text">Integrated Science — Basic 7</div>
+    </div>
+    
+    <!-- Front Cover -->
+    <div class="front-cover">
+        <div>
+            <div class="front-badge">Junior High School</div>
+            <div class="front-title">Integrated Science</div>
+            <div class="front-subtitle">Basic 7</div>
+            <div class="front-icon">
+        <svg viewBox="0 0 100 100" style="width: 80px; height: 80px;">
+            <circle cx="50" cy="50" r="8" fill="#1565c0" opacity="0.9"/>
+            <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="#1565c0" stroke-width="2" opacity="0.7"/>
+            <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="#1565c0" stroke-width="2" opacity="0.7" transform="rotate(60 50 50)"/>
+            <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="#1565c0" stroke-width="2" opacity="0.7" transform="rotate(120 50 50)"/>
+        </svg>
+        </div>
+            <div style="font-size: 14pt; opacity: 0.9;">Complete BECE Preparation<br>Examination Papers & Marking Schemes</div>
+        </div>
+        <div class="front-publisher">
+            <strong>Beacon Educational Consult</strong><br>
+            2026 Edition
+        </div>
+    </div>
+    
+    <!-- Bleed Right -->
+    <div class="bleed-right"></div>
+</body>
+</html>
